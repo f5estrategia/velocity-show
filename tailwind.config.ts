@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        body: ['Inter', 'sans-serif'],
+        display: ['Montserrat', 'sans-serif'],
+        quote: ['Playfair Display', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +62,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        gold: "hsl(var(--accent-gold))",
+        orange: "hsl(var(--accent-orange))",
+        navy: "hsl(var(--accent-blue))",
       },
       borderRadius: {
         lg: "var(--radius)",
