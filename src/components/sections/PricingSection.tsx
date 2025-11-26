@@ -80,9 +80,12 @@ const PricingSection = () => {
               <Button 
                 className="w-full text-sm py-6 rounded-md font-medium shadow-lg hover:shadow-xl transition-all duration-300 mouse-glow relative overflow-hidden group"
                 size="lg"
+                asChild
               >
-                <span className="relative z-10">Começar Agora</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
+                <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+                  <span className="relative z-10">Começar Agora</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
+                </a>
               </Button>
 
               {/* Footer Note */}
