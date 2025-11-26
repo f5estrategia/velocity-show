@@ -40,9 +40,9 @@ const HeroSection = () => {
                 transition={{ duration: 0.9, delay: 0.2 }}
                 className="space-y-6"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-[1.15] tracking-tight">
                   Sua comunicação define sua 
-                  <span className="block mt-2 gradient-text">trajetória profissional</span>
+                  <span className="block mt-2 gradient-text font-impact font-bold tracking-tight">trajetória profissional</span>
                 </h1>
 
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">

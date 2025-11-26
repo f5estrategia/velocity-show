@@ -17,6 +17,7 @@ export default {
         sans: ['Sora', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
         display: ['Cormorant Garamond', 'Georgia', 'serif'],
         serif: ['Cormorant Garamond', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        impact: ['Big Shoulders Display', 'Impact', 'Arial Black', 'sans-serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1.2rem', letterSpacing: '0.03em' }],
