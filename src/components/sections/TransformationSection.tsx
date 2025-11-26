@@ -46,15 +46,15 @@ const TransformationSection = () => {
           {transformations.map((item, index) => (
             <Card 
               key={index}
-              className="bg-card border border-border hover:border-gold/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center"
+              className="bg-card border border-border hover:border-accent-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 text-center"
             >
               <CardContent className="p-6 md:p-8">
                 <div className="flex justify-center mb-4">
-                  <div className="bg-gold/10 p-4 rounded-full">
-                    <item.icon className="w-8 h-8 text-gold" />
+                <div className="bg-accent-primary/10 p-4 rounded-full">
+                  <item.icon className="w-8 h-8 text-accent-primary" />
                   </div>
                 </div>
-                <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-gold">
+                <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-accent-primary">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -71,7 +71,7 @@ const TransformationSection = () => {
             "Não adianta ficar reclamando e nem assistindo 
             outras pessoas que sabem MENOS que você 
             ter MAIS sucesso que você.
-            O que elas têm é <span className="text-gold">CORAGEM.</span>"
+            O que elas têm é <span className="text-accent-primary">CORAGEM.</span>"
           </blockquote>
         </div>
       </div>

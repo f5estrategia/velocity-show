@@ -97,11 +97,11 @@ const ModulesSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`module-${index}`}
-                className="bg-card border border-border rounded-xl overflow-hidden hover:border-gold/50 transition-colors"
+                className="bg-card border border-border rounded-xl overflow-hidden hover:border-accent-primary/50 transition-colors"
               >
                 <AccordionTrigger className="px-6 md:px-8 py-6 hover:no-underline">
                   <div className="flex items-start gap-4 text-left w-full">
-                    <span className="text-gold font-display text-3xl md:text-4xl font-bold">
+                    <span className="text-accent-primary font-display text-3xl md:text-4xl font-bold">
                       {module.number}
                     </span>
                     <div className="flex-1">
@@ -119,7 +119,7 @@ const ModulesSection = () => {
                   <ul className="space-y-2 pl-16">
                     {module.lessons.map((lesson, lessonIndex) => (
                       <li key={lessonIndex} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-gold mt-1">▸</span>
+                        <span className="text-accent-primary mt-1">▸</span>
                         <span>{lesson}</span>
                       </li>
                     ))}
@@ -130,9 +130,9 @@ const ModulesSection = () => {
           </Accordion>
 
           {/* Bonus */}
-          <div className="mt-6 bg-gradient-to-r from-gold/10 to-navy/10 border border-gold/30 rounded-xl p-6 md:p-8">
+          <div className="mt-6 bg-gradient-to-r from-accent-primary/10 to-navy/10 border border-accent-primary/30 rounded-xl p-6 md:p-8">
             <div className="flex items-start gap-4">
-              <span className="text-gold font-display text-3xl md:text-4xl font-bold">🎁</span>
+              <span className="text-accent-primary font-display text-3xl md:text-4xl font-bold">BÔNUS</span>
               <div>
                 <h3 className="font-display text-xl md:text-2xl font-bold mb-2">
                   BÔNUS - SÍNTESE FINAL

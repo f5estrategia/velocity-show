@@ -4,7 +4,7 @@ const FinalCTASection = () => {
   return (
     <section className="py-20 md:py-32 bg-gradient-to-br from-background via-navy/20 to-background relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-primary/5 via-transparent to-transparent"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -32,9 +32,8 @@ const FinalCTASection = () => {
             COMEÇAR MINHA TRANSFORMAÇÃO AGORA
           </Button>
 
-          <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent px-6 py-3 rounded-full">
-            <span className="text-2xl">🔥</span>
-            <span className="text-accent font-semibold">
+          <div className="inline-flex items-center gap-2 bg-accent-primary/20 border border-accent-primary px-6 py-3 rounded-full">
+            <span className="text-accent-primary font-semibold">
               Condição especial de lançamento - Vagas limitadas
             </span>
           </div>
