@@ -64,14 +64,14 @@ const PricingSection = () => {
               key={index}
               className={`relative ${
                 tier.highlighted 
-                  ? 'bg-card border-2 border-gold shadow-2xl scale-105 z-10' 
+                  ? 'bg-card border-2 border-accent-primary shadow-2xl scale-105 z-10' 
                   : 'bg-card border border-border'
               } transition-all duration-300 hover:scale-105`}
             >
               {tier.badge && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                  <span className="bg-gold text-black px-6 py-2 rounded-full text-sm font-bold">
-                    ⭐ {tier.badge}
+                  <span className="bg-accent-primary text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                    {tier.badge}
                   </span>
                 </div>
               )}
@@ -81,7 +81,7 @@ const PricingSection = () => {
                   {tier.name}
                 </CardTitle>
                 <div className="mb-2">
-                  <span className="text-5xl font-display font-black text-gold">
+                  <span className="text-5xl font-display font-black text-accent-primary">
                     R$ {tier.price}
                   </span>
                   <span className="text-muted-foreground"> à vista</span>
@@ -93,8 +93,8 @@ const PricingSection = () => {
                 <div className="space-y-3 mb-8">
                   {tier.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className={feature.includes('+') ? 'font-semibold text-gold' : 'text-muted-foreground'}>
+                      <Check className="w-5 h-5 text-accent-primary flex-shrink-0 mt-0.5" />
+                      <span className={feature.includes('+') ? 'font-semibold text-accent-primary' : 'text-muted-foreground'}>
                         {feature}
                       </span>
                     </div>
@@ -104,8 +104,8 @@ const PricingSection = () => {
                 <Button 
                   className={`w-full ${
                     tier.highlighted 
-                      ? 'bg-gold text-black hover:bg-gold/90' 
-                      : 'bg-gold/10 text-gold hover:bg-gold hover:text-black'
+                      ? 'bg-accent-primary text-white hover:bg-accent-primary/90 shadow-lg' 
+                      : 'bg-accent-primary/10 text-accent-primary hover:bg-accent-primary hover:text-white'
                   } font-bold py-6 transition-all duration-300`}
                   size="lg"
                 >
@@ -117,7 +117,7 @@ const PricingSection = () => {
         </div>
 
         <p className="text-center text-muted-foreground mt-12 text-sm">
-          💳 Parcelamento em até 12x no cartão de crédito | 🔒 Ambiente 100% seguro
+          Parcelamento em até 12x no cartão de crédito | Ambiente 100% seguro
         </p>
       </div>
     </section>

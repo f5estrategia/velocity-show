@@ -14,8 +14,8 @@ All colors MUST be HSL.
     --text-primary: 0 0% 100%;
     --text-secondary: 0 0% 70.2%;
     --text-muted: 0 0% 40%;
-    --accent-gold: 45 63.6% 52.2%;
-    --accent-orange: 14 100% 60.4%;
+    --accent-primary: 16 90% 58%;
+    --accent-glow: 16 100% 65%;
     --accent-blue: 216 94.1% 21%;
     --border-subtle: 0 0% 100% / 0.1;
     
@@ -28,8 +28,8 @@ All colors MUST be HSL.
     --popover: var(--bg-card);
     --popover-foreground: var(--text-primary);
     
-    --primary: var(--accent-gold);
-    --primary-foreground: 0 0% 0%;
+    --primary: var(--accent-primary);
+    --primary-foreground: 0 0% 100%;
     
     --secondary: var(--bg-secondary);
     --secondary-foreground: var(--text-primary);
@@ -37,31 +37,32 @@ All colors MUST be HSL.
     --muted: var(--bg-secondary);
     --muted-foreground: var(--text-secondary);
     
-    --accent: var(--accent-orange);
-    --accent-foreground: var(--text-primary);
+    --accent: var(--accent-glow);
+    --accent-foreground: 0 0% 0%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: var(--text-primary);
     
     --border: var(--border-subtle);
     --input: var(--bg-card);
-    --ring: var(--accent-gold);
+    --ring: var(--accent-primary);
     
     --radius: 1rem;
     
     --gradient-hero: linear-gradient(135deg, hsl(var(--bg-primary)) 0%, hsl(var(--bg-card)) 50%, hsl(var(--accent-blue)) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(var(--text-primary)) 0%, hsl(var(--accent-gold)) 100%);
-    --shadow-gold: 0 10px 30px hsl(var(--accent-gold) / 0.3);
-    --shadow-card: 0 20px 40px hsl(var(--accent-gold) / 0.15);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--text-primary)) 0%, hsl(var(--accent-glow)) 100%);
+    --shadow-accent: 0 10px 30px hsl(var(--accent-primary) / 0.4);
+    --shadow-card: 0 20px 40px hsl(var(--accent-primary) / 0.2);
+    --glow-accent: 0 0 40px hsl(var(--accent-glow) / 0.6);
     
     --sidebar-background: var(--bg-secondary);
     --sidebar-foreground: var(--text-secondary);
-    --sidebar-primary: var(--accent-gold);
-    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-primary: var(--accent-primary);
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: var(--bg-card);
     --sidebar-accent-foreground: var(--text-primary);
     --sidebar-border: var(--border-subtle);
-    --sidebar-ring: var(--accent-gold);
+    --sidebar-ring: var(--accent-primary);
   }
 }
 
@@ -92,10 +93,14 @@ All colors MUST be HSL.
 
 @layer utilities {
   .gradient-text {
-    background: var(--gradient-gold);
+    background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--accent-glow) / 0.5);
   }
   
   .reveal {

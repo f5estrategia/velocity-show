@@ -36,11 +36,11 @@ const ProblemSection = () => {
           {problems.map((problem, index) => (
             <Card 
               key={index}
-              className="bg-card border border-border hover:border-gold/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2"
+              className="bg-card border border-border hover:border-accent-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2"
             >
               <CardContent className="p-6 md:p-8">
-                <problem.icon className="w-12 h-12 md:w-16 md:h-16 text-gold mb-4" />
-                <h3 className="font-display text-xl md:text-2xl font-bold mb-3 text-gold">
+                <problem.icon className="w-12 h-12 md:w-16 md:h-16 text-accent-primary mb-4" />
+                <h3 className="font-display text-xl md:text-2xl font-bold mb-3 text-accent-primary">
                   {problem.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -61,12 +61,7 @@ const ProblemSection = () => {
               do que fazendo o discurso no velório."
             </span>
           </blockquote>
-          <p className="text-gold font-bold text-lg md:text-xl">— Fernando Machado</p>
-          
-          <p className="text-muted-foreground text-lg md:text-xl mt-8 leading-relaxed">
-            E o pior: esse medo foi <span className="text-foreground font-semibold">COLOCADO</span> em você. 
-            Lá na infância, quando o papai e a mamãe mandavam ficar quieto na frente das pessoas.
-          </p>
+          <p className="text-accent-primary font-bold text-lg md:text-xl">— Fernando Machado</p>
         </div>
       </div>
     </section>

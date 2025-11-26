@@ -1,6 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
-import VSLSection from "@/components/sections/VSLSection";
 import TransformationSection from "@/components/sections/TransformationSection";
 import InstructorSection from "@/components/sections/InstructorSection";
 import ModulesSection from "@/components/sections/ModulesSection";
@@ -16,7 +15,6 @@ const Index = () => {
     <main className="bg-background overflow-x-hidden">
       <HeroSection />
       <ProblemSection />
-      <VSLSection />
       <TransformationSection />
       <InstructorSection />
       <ModulesSection />

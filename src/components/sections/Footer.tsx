@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-2xl font-bold text-gold mb-2">
+            <h3 className="font-display text-2xl font-bold text-accent-primary mb-2">
               F5 ESTRATÉGIA
             </h3>
             <p className="text-muted-foreground">
@@ -43,21 +43,21 @@ const Footer = () => {
             <div className="flex gap-4">
               <a 
                 href="#" 
-                className="bg-card p-3 rounded-full hover:bg-gold hover:text-black transition-all duration-300"
+                className="bg-card p-3 rounded-full hover:bg-accent-primary hover:text-white transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
                 href="#" 
-                className="bg-card p-3 rounded-full hover:bg-gold hover:text-black transition-all duration-300"
+                className="bg-card p-3 rounded-full hover:bg-accent-primary hover:text-white transition-all duration-300"
                 aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
               </a>
               <a 
                 href="#" 
-                className="bg-card p-3 rounded-full hover:bg-gold hover:text-black transition-all duration-300"
+                className="bg-card p-3 rounded-full hover:bg-accent-primary hover:text-white transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />

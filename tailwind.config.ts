@@ -62,8 +62,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        gold: "hsl(var(--accent-gold))",
-        orange: "hsl(var(--accent-orange))",
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+          primary: "hsl(var(--accent-primary))",
+          glow: "hsl(var(--accent-glow))",
+        },
         navy: "hsl(var(--accent-blue))",
       },
       borderRadius: {
