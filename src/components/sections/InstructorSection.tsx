@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import fernandoImage from "@/assets/fernando-hero.jpeg";
+import fernandoImage from "@/assets/fernando-palco.png";
 
 const InstructorSection = () => {
   return (
@@ -12,7 +12,7 @@ const InstructorSection = () => {
             <img 
               src={fernandoImage}
               alt="Fernando Machado"
-              className="relative rounded-lg shadow-2xl w-full grayscale hover:grayscale-0 transition-all duration-500 border border-white/5"
+              className="relative rounded-lg shadow-2xl w-full grayscale border border-white/5"
             />
           </div>
 
