@@ -85,7 +85,10 @@ const HeroSection = () => {
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-[1.15] tracking-tight">
                 <span className="text-reveal" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
-                  Sua comunicação define sua
+                  Sua <span className="relative inline-block">
+                    comunicação
+                    <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/60 to-transparent"></span>
+                  </span> define sua
                 </span>
                 <span className="block mt-2 gradient-text font-impact font-bold tracking-tight text-reveal" style={{ '--reveal-delay': '0.2s' } as React.CSSProperties}>
                   trajetória profissional
@@ -134,25 +137,39 @@ const HeroSection = () => {
               </div>
             </motion.div>
 
-            {/* Metrics - Editorial Style */}
+            {/* Metrics - Glass Cards Floating */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.5 }}
-              className="grid grid-cols-3 gap-6 pt-6 border-t border-white/5 max-w-2xl mx-auto"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto -mt-8 relative z-20"
             >
-              <div className="text-center">
-                <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">13</div>
-                <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Anos SBT</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">R$ 30M</div>
-                <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Gerados</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">1000+</div>
-                <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Marcas</div>
-              </div>
+              <motion.div 
+                className="bg-card/40 backdrop-blur-md border border-white/10 rounded-lg p-6 text-center hover:border-gold/30 transition-all duration-500 shadow-lg"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="text-3xl md:text-4xl font-light text-gold mb-2">13</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider leading-tight">Anos SBT</div>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-card/40 backdrop-blur-md border border-white/10 rounded-lg p-6 text-center hover:border-gold/30 transition-all duration-500 shadow-lg"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="text-3xl md:text-4xl font-light text-gold mb-2">R$ 30M</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider leading-tight">Gerados</div>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-card/40 backdrop-blur-md border border-white/10 rounded-lg p-6 text-center hover:border-gold/30 transition-all duration-500 shadow-lg sm:col-span-1 col-span-1 mx-auto w-full sm:w-auto"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="text-3xl md:text-4xl font-light text-gold mb-2">1000+</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider leading-tight">Marcas<br />Impactadas</div>
+              </motion.div>
             </motion.div>
 
             {/* CTA */}
