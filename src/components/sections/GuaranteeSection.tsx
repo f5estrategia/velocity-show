@@ -2,39 +2,33 @@ import { Shield } from "lucide-react";
 
 const GuaranteeSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-background">
+    <section className="py-20 md:py-28 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex justify-center mb-8">
-            <div className="bg-accent-primary/10 p-6 rounded-full">
-              <Shield className="w-16 h-16 text-accent-primary" />
+            <div className="bg-gold/5 p-4 rounded-lg border border-gold/20">
+              <Shield className="w-12 h-12 text-gold" strokeWidth={1.5} />
             </div>
           </div>
 
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-8">
-            GARANTIA INCONDICIONAL<br />DE <span className="text-accent-primary">7 DIAS</span>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 tracking-tight">
+            Garantia incondicional de <span className="text-gold">7 dias</span>
           </h2>
 
-          <div className="text-lg md:text-xl text-muted-foreground leading-relaxed space-y-4">
+          <div className="text-sm md:text-base text-muted-foreground leading-relaxed space-y-4 max-w-2xl mx-auto">
             <p>
-              Se em até 7 dias você sentir que o programa 
-              não é para você, basta enviar um e-mail 
-              e devolvemos <span className="text-foreground font-bold">100% do seu investimento.</span>
+              Se em até 7 dias você sentir que o programa não é para você, 
+              basta enviar um e-mail e devolvemos 100% do seu investimento.
             </p>
             
-            <p>
-              Sem perguntas. Sem burocracia.
-            </p>
-
-            <p className="text-foreground font-semibold text-xl">
-              Simples assim. Porque eu confio no poder 
-              dessa transformação.
+            <p className="text-foreground/90">
+              Sem perguntas. Sem burocracia. Simples assim.
             </p>
           </div>
 
-          <div className="mt-12 inline-block border-2 border-accent-primary rounded-2xl px-8 py-4">
-            <p className="text-accent-primary font-bold text-lg">
-              7 DIAS 100% GARANTIDO
+          <div className="mt-8 inline-block border border-gold/30 rounded-lg px-6 py-3">
+            <p className="text-gold text-xs font-medium uppercase tracking-wide">
+              7 dias • 100% garantido
             </p>
           </div>
         </div>

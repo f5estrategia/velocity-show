@@ -14,11 +14,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        display: ['Montserrat', 'sans-serif'],
-        quote: ['Playfair Display', 'serif'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       colors: {
+        gold: {
+          DEFAULT: "hsl(var(--gold-elegant))",
+          soft: "hsl(var(--gold-soft))",
+          muted: "hsl(var(--gold-muted))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -65,10 +68,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-          primary: "hsl(var(--accent-primary))",
-          glow: "hsl(var(--accent-glow))",
         },
-        navy: "hsl(var(--accent-blue))",
       },
       borderRadius: {
         lg: "var(--radius)",
