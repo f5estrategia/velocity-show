@@ -67,8 +67,8 @@ const modules = [
   {
     number: "05",
     title: "Engajamento de Liderança",
-    duration: "24 min",
-    description: "Como conquistar uma sala em 30 segundos. Técnicas de conexão que funcionam no palco e no Zoom.",
+    duration: "31 min",
+    description: "Como conquistar uma sala em 30 segundos. Técnicas de conexão que funcionam no palco e no Zoom, além de estratégias para comunicação digital.",
     thumbnail: modulo5,
     lessons: [
       "Criando Rapport",
@@ -77,16 +77,7 @@ const modules = [
       "Autenticidade é Estratégia",
       "Engajando Plateia",
       "Inspire para Liderar",
-      "Comunicação Digital"
-    ]
-  },
-  {
-    number: "06",
-    title: "Comunicação Digital",
-    duration: "7 min",
-    description: "Adapte sua comunicação para o mundo digital sem perder a essência.",
-    thumbnail: modulo5,
-    lessons: [
+      "Comunicação Digital",
       "Câmera e Gravação",
       "Plataformas e Formatos"
     ]
@@ -112,7 +103,7 @@ const ModulesSection = () => {
             O que você vai <span className="gradient-text">aprender</span>
           </h2>
           <p className="text-sm text-muted-foreground">
-            6 Módulos • 125 minutos • Acesso vitalício
+            5 Módulos • 125 minutos
           </p>
         </div>
 

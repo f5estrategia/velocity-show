@@ -74,79 +74,36 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-          {/* Two Column Editorial Layout */}
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            {/* Left Column - Manifesto */}
-            <div className="lg:col-span-5 space-y-10 order-2 lg:order-1">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.2 }}
-                className="space-y-6"
-              >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-[1.15] tracking-tight">
-                  <span className="text-reveal" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
-                    Sua comunicação define sua
-                  </span>
-                  <span className="block mt-2 gradient-text font-impact font-bold tracking-tight text-reveal" style={{ '--reveal-delay': '0.2s' } as React.CSSProperties}>
-                    trajetória profissional
-                  </span>
-                </h1>
-
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
-                  O único programa que une 13 anos de TV ao vivo 
-                  com a experiência de um CEO que gerou R$ 30 milhões 
-                  através da palavra.
-                </p>
-              </motion.div>
-
-              {/* Metrics - Editorial Style - Enhanced for Mobile */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.9, delay: 0.4 }}
-                className="grid grid-cols-3 gap-6 pt-6 border-t border-white/5"
-              >
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">13</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Anos<br className="lg:hidden" /> SBT</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">R$ 30M</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Gerados</div>
-                </div>
-                <div className="text-center lg:text-left">
-                  <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">1000+</div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Marcas</div>
-                </div>
-              </motion.div>
-
-              {/* CTA - Mouse-aware with magnetic effect */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="pt-4"
-              >
-                <Button 
-                  size="lg" 
-                  className="w-full lg:w-auto text-sm px-8 py-6 rounded-sm font-normal tracking-wide micro-interaction mouse-glow group relative overflow-hidden"
-                  asChild
-                >
-                  <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
-                    <span className="relative z-10">Iniciar Jornada</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
-                  </a>
-                </Button>
-              </motion.div>
-            </div>
-
-            {/* Right Column - VSL - Appears first on mobile */}
+          {/* Single Column Layout */}
+          <div className="max-w-5xl mx-auto space-y-12">
+            {/* Headline and Subheadline */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="space-y-6 text-center"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-[1.15] tracking-tight">
+                <span className="text-reveal" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
+                  Sua comunicação define sua
+                </span>
+                <span className="block mt-2 gradient-text font-impact font-bold tracking-tight text-reveal" style={{ '--reveal-delay': '0.2s' } as React.CSSProperties}>
+                  trajetória profissional
+                </span>
+              </h1>
+
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                O único programa que une 13 anos de TV ao vivo 
+                com a experiência de um CEO que gerou R$ 30 milhões 
+                através da palavra.
+              </p>
+            </motion.div>
+
+            {/* VSL */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
-              className="lg:col-span-7 order-1 lg:order-2"
             >
               <div className="relative aspect-video rounded-sm overflow-hidden group cursor-pointer border border-white/5 shadow-elegant mouse-glow border-trace">
                 <div className="absolute inset-0 bg-navy-deep"></div>
@@ -175,6 +132,46 @@ const HeroSection = () => {
                   </p>
                 </div>
               </div>
+            </motion.div>
+
+            {/* Metrics - Editorial Style */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.9, delay: 0.5 }}
+              className="grid grid-cols-3 gap-6 pt-6 border-t border-white/5 max-w-2xl mx-auto"
+            >
+              <div className="text-center">
+                <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">13</div>
+                <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Anos SBT</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">R$ 30M</div>
+                <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Gerados</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">1000+</div>
+                <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Marcas</div>
+              </div>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="text-center"
+            >
+              <Button 
+                size="lg" 
+                className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide micro-interaction mouse-glow group relative overflow-hidden"
+                asChild
+              >
+                <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+                  <span className="relative z-10">Iniciar Jornada</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
+                </a>
+              </Button>
             </motion.div>
           </div>
         </div>
