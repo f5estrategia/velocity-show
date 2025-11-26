@@ -8,17 +8,24 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --bg-primary: 0 0% 4%;
-    --bg-secondary: 0 0% 7%;
-    --bg-card: 0 0% 9%;
-    --text-primary: 0 0% 96%;
-    --text-secondary: 0 0% 65%;
-    --text-muted: 0 0% 45%;
-    --gold-soft: 43 74% 66%;
-    --gold-elegant: 43 89% 70%;
-    --gold-muted: 43 60% 50%;
-    --accent-blue: 216 94.1% 21%;
-    --border-subtle: 0 0% 100% / 0.08;
+    /* Quiet Luxury Foundation */
+    --bg-primary: 222 15% 8%;
+    --bg-secondary: 220 15% 11%;
+    --bg-card: 220 10% 12%;
+    --text-primary: 40 8% 90%;
+    --text-secondary: 40 5% 62%;
+    --text-muted: 40 4% 48%;
+    
+    /* Sophisticated Gold Palette */
+    --gold-primary: 40 28% 65%;
+    --gold-accent: 38 35% 58%;
+    --gold-subtle: 42 18% 48%;
+    --gold-whisper: 40 12% 35%;
+    
+    /* Navy & Charcoal */
+    --navy-deep: 220 25% 15%;
+    --charcoal: 220 8% 22%;
+    --border-subtle: 40 5% 100% / 0.06;
     
     --background: var(--bg-primary);
     --foreground: var(--text-primary);
@@ -29,41 +36,42 @@ All colors MUST be HSL.
     --popover: var(--bg-card);
     --popover-foreground: var(--text-primary);
     
-    --primary: var(--gold-elegant);
-    --primary-foreground: 0 0% 10%;
+    --primary: var(--gold-primary);
+    --primary-foreground: 222 15% 8%;
     
-    --secondary: var(--bg-secondary);
+    --secondary: var(--navy-deep);
     --secondary-foreground: var(--text-primary);
     
     --muted: var(--bg-secondary);
     --muted-foreground: var(--text-secondary);
     
-    --accent: var(--gold-soft);
-    --accent-foreground: 0 0% 10%;
+    --accent: var(--gold-accent);
+    --accent-foreground: 222 15% 8%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: var(--text-primary);
     
     --border: var(--border-subtle);
     --input: var(--bg-card);
-    --ring: var(--gold-elegant);
+    --ring: var(--gold-primary);
     
-    --radius: 0.5rem;
+    --radius: 0.25rem;
     
-    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-muted)) 0%, hsl(var(--gold-elegant)) 100%);
-    --gradient-gold-subtle: linear-gradient(135deg, hsl(var(--gold-muted) / 0.1) 0%, hsl(var(--gold-elegant) / 0.05) 100%);
-    --shadow-gold: 0 8px 24px hsl(var(--gold-soft) / 0.15);
-    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.4);
-    --glow-gold: 0 0 30px hsl(var(--gold-soft) / 0.3);
+    /* Subtle Effects */
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-subtle)) 0%, hsl(var(--gold-primary)) 100%);
+    --gradient-gold-whisper: linear-gradient(135deg, hsl(var(--gold-whisper) / 0.08) 0%, hsl(var(--gold-subtle) / 0.04) 100%);
+    --shadow-elegant: 0 12px 40px -8px hsl(0 0% 0% / 0.5);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --glow-subtle: 0 0 40px hsl(var(--gold-whisper) / 0.15);
     
     --sidebar-background: var(--bg-secondary);
     --sidebar-foreground: var(--text-secondary);
-    --sidebar-primary: var(--gold-elegant);
-    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-primary: var(--gold-primary);
+    --sidebar-primary-foreground: 222 15% 8%;
     --sidebar-accent: var(--bg-card);
     --sidebar-accent-foreground: var(--text-primary);
     --sidebar-border: var(--border-subtle);
-    --sidebar-ring: var(--gold-elegant);
+    --sidebar-ring: var(--gold-primary);
   }
 }
 
@@ -75,18 +83,21 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.75;
+    font-weight: 400;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
   }
 }
 
 @layer utilities {
+  /* Editorial Typography */
   .gradient-text {
     background: var(--gradient-gold);
     -webkit-background-clip: text;
@@ -95,13 +106,32 @@ All colors MUST be HSL.
   }
   
   .text-gold {
-    color: hsl(var(--gold-elegant));
+    color: hsl(var(--gold-primary));
   }
   
+  .text-gold-subtle {
+    color: hsl(var(--gold-subtle));
+  }
+  
+  .border-gold-whisper {
+    border-color: hsl(var(--gold-whisper) / 0.2);
+  }
+  
+  /* Micro-interactions */
+  .micro-interaction {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .micro-interaction:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Reveal Animations */
   .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .reveal.active {
@@ -109,6 +139,12 @@ All colors MUST be HSL.
     transform: translateY(0);
   }
   
+  /* Editorial Spacing */
+  .editorial-spacing {
+    @apply py-32 md:py-40 lg:py-52;
+  }
+  
+  /* Carbon Texture */
   .carbon-texture {
     position: relative;
   }
@@ -119,7 +155,18 @@ All colors MUST be HSL.
     inset: 0;
     background-size: cover;
     background-position: center;
-    opacity: 0.03;
+    opacity: 0.02;
     pointer-events: none;
+  }
+  
+  /* Luxury Card */
+  .luxury-card {
+    @apply bg-card/40 backdrop-blur-sm border border-white/5 shadow-elegant;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .luxury-card:hover {
+    @apply border-gold-whisper shadow-elegant;
+    transform: translateY(-4px);
   }
 }

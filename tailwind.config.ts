@@ -15,13 +15,31 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
+      },
+      fontSize: {
+        'xs': ['0.6875rem', { lineHeight: '1rem', letterSpacing: '0.05em' }],
+        'sm': ['0.8125rem', { lineHeight: '1.25rem', letterSpacing: '0.01em' }],
+        'base': ['0.9375rem', { lineHeight: '1.5rem', letterSpacing: '0' }],
+        'lg': ['1.0625rem', { lineHeight: '1.75rem', letterSpacing: '-0.01em' }],
+        'xl': ['1.25rem', { lineHeight: '1.875rem', letterSpacing: '-0.01em' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.02em' }],
+        '3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '-0.02em' }],
+        '4xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '-0.03em' }],
+        '5xl': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.03em' }],
       },
       colors: {
         gold: {
-          DEFAULT: "hsl(var(--gold-elegant))",
-          soft: "hsl(var(--gold-soft))",
-          muted: "hsl(var(--gold-muted))",
+          DEFAULT: "hsl(var(--gold-primary))",
+          primary: "hsl(var(--gold-primary))",
+          accent: "hsl(var(--gold-accent))",
+          subtle: "hsl(var(--gold-subtle))",
+          whisper: "hsl(var(--gold-whisper))",
         },
+        navy: {
+          deep: "hsl(var(--navy-deep))",
+        },
+        charcoal: "hsl(var(--charcoal))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage from "@/assets/fernando-hero.jpeg";
 import carbonTexture from "@/assets/carbon-texture-1.jpg";
 
 const HeroSection = () => {
@@ -12,107 +10,106 @@ const HeroSection = () => {
         <img 
           src={carbonTexture}
           alt=""
-          className="w-full h-full object-cover opacity-[0.03]"
+          className="w-full h-full object-cover opacity-[0.015]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 py-20">
+      {/* Content - Editorial Layout */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32">
         <div className="max-w-7xl mx-auto">
-          {/* Badge */}
+          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.8 }}
+            className="mb-16 lg:mb-20"
           >
-            <span className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-gold font-light border border-gold/20 px-4 py-1.5 rounded-full backdrop-blur-sm">
-              Programa Executivo de Comunicação
+            <span className="text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-gold-subtle font-light">
+              Programa Executivo
             </span>
           </motion.div>
 
-          {/* Two Column Layout */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column - Text */}
-            <div className="text-center lg:text-left space-y-8">
-              {/* Headline */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.15] tracking-tight"
-              >
-                Sua comunicação pode ser sua
-                <span className="block mt-2 gradient-text">maior arma ou sua maior fraqueza</span>
-              </motion.h1>
-
-              {/* Subheadline */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0"
-              >
-                Transforme-a no ativo que gera resultados concretos. 
-                O único programa que une 13 anos de TV ao vivo 
-                com a prática de um CEO que gerou R$ 30 milhões.
-              </motion.p>
-
-              {/* CTA */}
+          {/* Two Column Editorial Layout */}
+          <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start">
+            {/* Left Column - Manifesto */}
+            <div className="lg:col-span-5 space-y-10">
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.2 }}
+                className="space-y-6"
               >
-                <Button 
-                  size="lg" 
-                  className="text-sm px-8 py-5 rounded-md font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Quero Dominar a Comunicação
-                </Button>
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.2] tracking-tight">
+                  Sua comunicação define sua 
+                  <span className="block mt-1 gradient-text">trajetória profissional</span>
+                </h1>
+
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  O único programa que une 13 anos de TV ao vivo 
+                  com a experiência de um CEO que gerou R$ 30 milhões 
+                  através da palavra.
+                </p>
               </motion.div>
 
-              {/* Trust Badges */}
+              {/* Metrics - Editorial Style */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-wrap justify-center lg:justify-start gap-6 text-xs text-muted-foreground pt-4"
+                transition={{ duration: 0.9, delay: 0.4 }}
+                className="flex gap-8 pt-6 border-t border-white/5"
               >
-                <div className="flex items-center gap-2">
-                  <div className="w-1 h-1 rounded-full bg-gold"></div>
-                  <span>13 Anos SBT</span>
+                <div>
+                  <div className="text-lg font-light text-gold mb-0.5">13</div>
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Anos SBT</div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1 h-1 rounded-full bg-gold"></div>
-                  <span>R$ 30M Gerados</span>
+                <div>
+                  <div className="text-lg font-light text-gold mb-0.5">R$ 30M</div>
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Gerados</div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1 h-1 rounded-full bg-gold"></div>
-                  <span>1000+ Marcas</span>
+                <div>
+                  <div className="text-lg font-light text-gold mb-0.5">1000+</div>
+                  <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Marcas</div>
                 </div>
+              </motion.div>
+
+              {/* CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="pt-4"
+              >
+                <Button 
+                  size="lg" 
+                  className="text-xs px-6 py-5 rounded-sm font-normal tracking-wide micro-interaction"
+                >
+                  Iniciar Jornada
+                </Button>
               </motion.div>
             </div>
 
             {/* Right Column - VSL */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative"
+              transition={{ duration: 0.9, delay: 0.3 }}
+              className="lg:col-span-7"
             >
-              <div className="relative aspect-[9/16] lg:aspect-video rounded-xl overflow-hidden group cursor-pointer shadow-2xl max-w-md mx-auto lg:max-w-none border border-white/5">
-                <img 
-                  src={heroImage}
-                  alt="Fernando Machado"
-                  className="w-full h-full object-cover opacity-60 group-hover:opacity-70 transition-opacity duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+              <div className="relative aspect-video rounded-sm overflow-hidden group cursor-pointer border border-white/5 shadow-elegant">
+                <div className="absolute inset-0 bg-navy-deep"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-gold/10 backdrop-blur-md p-5 rounded-full border border-gold/20 group-hover:scale-110 group-hover:border-gold/40 transition-all duration-300">
-                    <Play className="w-10 h-10 text-gold fill-gold" />
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gold/5 blur-3xl"></div>
+                    <div className="relative w-16 h-16 rounded-full border border-gold-whisper/40 flex items-center justify-center group-hover:border-gold/60 transition-all duration-500">
+                      <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-gold border-b-[8px] border-b-transparent ml-1"></div>
+                    </div>
                   </div>
+                </div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-[11px] text-muted-foreground uppercase tracking-wider">
+                    Assista à Apresentação
+                  </p>
                 </div>
               </div>
             </motion.div>
