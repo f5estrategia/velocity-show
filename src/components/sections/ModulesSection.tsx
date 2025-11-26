@@ -1,5 +1,10 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import carbonTexture from "@/assets/carbon-texture-2.jpg";
+import modulo1 from "@/assets/modulo1-fundacao.jpg";
+import modulo2 from "@/assets/modulo2-preparacao.jpg";
+import modulo3 from "@/assets/modulo3-apresentacao.jpg";
+import modulo4 from "@/assets/modulo4-dominando.jpg";
+import modulo5 from "@/assets/modulo5-engajamento.jpg";
 
 const modules = [
   {
@@ -7,6 +12,7 @@ const modules = [
     title: "Fundação: Conteúdo Reina",
     duration: "13 min",
     description: "Técnicas de oratória são inúteis sem conteúdo relevante. Aprenda a transformar suas experiências únicas em conteúdo que faz você ser ouvido.",
+    thumbnail: modulo1,
     lessons: [
       "Boas-vindas e apresentação",
       "Conteúdo - A Base de Tudo",
@@ -19,6 +25,7 @@ const modules = [
     title: "Preparação: Checklist Estratégico",
     duration: "17 min",
     description: "Descubra o framework jornalístico que uso há 20 anos para estruturar qualquer apresentação em minutos.",
+    thumbnail: modulo2,
     lessons: [
       "5W1H e Pirâmide Invertida",
       "Monte Seu Roteiro",
@@ -31,6 +38,7 @@ const modules = [
     title: "Apresentação: Desafiando o Medo",
     duration: "20 min",
     description: "Técnicas de TV ao vivo para você dominar a ansiedade e entrar no palco como dono do espaço.",
+    thumbnail: modulo3,
     lessons: [
       "O Medo de Falar",
       "Preparação da Voz",
@@ -44,6 +52,7 @@ const modules = [
     title: "Dominando o Improviso",
     duration: "16 min",
     description: "O que fazer quando dá tudo errado ao vivo. Segredos de quem improvisou milhares de vezes na TV.",
+    thumbnail: modulo4,
     lessons: [
       "O Famoso Branco",
       "Técnicas de Respiração",
@@ -57,6 +66,7 @@ const modules = [
     title: "Engajamento de Liderança",
     duration: "24 min",
     description: "Como conquistar uma sala em 30 segundos. Técnicas de conexão que funcionam no palco e no Zoom.",
+    thumbnail: modulo5,
     lessons: [
       "Criando Rapport",
       "Lidando com Objeções",
@@ -72,6 +82,7 @@ const modules = [
     title: "Comunicação Digital",
     duration: "7 min",
     description: "Adapte sua comunicação para o mundo digital sem perder a essência.",
+    thumbnail: modulo5,
     lessons: [
       "Câmera e Gravação",
       "Plataformas e Formatos"
@@ -102,39 +113,53 @@ const ModulesSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+        <div className="max-w-6xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-6">
             {modules.map((module, index) => (
               <AccordionItem 
                 key={index} 
                 value={`module-${index}`}
-                className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-lg overflow-hidden hover:border-gold/20 transition-colors"
+                className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-lg overflow-hidden hover:border-gold/20 transition-all duration-500 group"
               >
-                <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                  <div className="flex items-start gap-4 text-left w-full">
-                    <span className="text-gold font-light text-2xl md:text-3xl">
-                      {module.number}
-                    </span>
-                    <div className="flex-1">
-                      <h3 className="text-sm md:text-base font-semibold mb-1">
-                        {module.title}
-                      </h3>
-                      <p className="text-xs text-muted-foreground">{module.duration}</p>
+                <AccordionTrigger className="px-0 py-0 hover:no-underline">
+                  <div className="flex flex-col md:flex-row items-start gap-6 text-left w-full p-6">
+                    {/* Thumbnail */}
+                    <div className="w-full md:w-48 aspect-video rounded-sm overflow-hidden flex-shrink-0">
+                      <img 
+                        src={module.thumbnail} 
+                        alt={module.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 flex items-start gap-4">
+                      <span className="text-gold font-impact text-3xl md:text-4xl tracking-tight">
+                        {module.number}
+                      </span>
+                      <div className="flex-1">
+                        <h3 className="text-base md:text-lg font-semibold mb-2 font-display">
+                          {module.title}
+                        </h3>
+                        <p className="text-xs text-muted-foreground">{module.duration}</p>
+                      </div>
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm text-muted-foreground italic mb-3 pl-12">
-                    {module.description}
-                  </p>
-                  <ul className="space-y-2 pl-12">
-                    {module.lessons.map((lesson, lessonIndex) => (
-                      <li key={lessonIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="text-gold/60 mt-0.5">•</span>
-                        <span>{lesson}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <AccordionContent className="px-6 pb-6">
+                  <div className="md:pl-56">
+                    <p className="text-sm text-muted-foreground italic mb-4">
+                      {module.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {module.lessons.map((lesson, lessonIndex) => (
+                        <li key={lessonIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <span className="text-gold/60 mt-0.5">•</span>
+                          <span>{lesson}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}
