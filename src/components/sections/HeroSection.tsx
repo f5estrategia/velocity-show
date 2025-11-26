@@ -75,9 +75,9 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Two Column Editorial Layout */}
-          <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             {/* Left Column - Manifesto */}
-            <div className="lg:col-span-5 space-y-10">
+            <div className="lg:col-span-5 space-y-10 order-2 lg:order-1">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -100,24 +100,24 @@ const HeroSection = () => {
                 </p>
               </motion.div>
 
-              {/* Metrics - Editorial Style */}
+              {/* Metrics - Editorial Style - Enhanced for Mobile */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.9, delay: 0.4 }}
-                className="flex gap-8 pt-6 border-t border-white/5"
+                className="grid grid-cols-3 gap-6 pt-6 border-t border-white/5"
               >
-                <div>
-                  <div className="text-2xl font-light text-gold mb-1">13</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Anos SBT</div>
+                <div className="text-center lg:text-left">
+                  <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">13</div>
+                  <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Anos<br className="lg:hidden" /> SBT</div>
                 </div>
-                <div>
-                  <div className="text-2xl font-light text-gold mb-1">R$ 30M</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Gerados</div>
+                <div className="text-center lg:text-left">
+                  <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">R$ 30M</div>
+                  <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Gerados</div>
                 </div>
-                <div>
-                  <div className="text-2xl font-light text-gold mb-1">1000+</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Marcas</div>
+                <div className="text-center lg:text-left">
+                  <div className="text-3xl md:text-2xl lg:text-2xl font-light text-gold mb-2">1000+</div>
+                  <div className="text-[10px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">Marcas</div>
                 </div>
               </motion.div>
 
@@ -130,7 +130,7 @@ const HeroSection = () => {
               >
                 <Button 
                   size="lg" 
-                  className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide micro-interaction mouse-glow group relative overflow-hidden"
+                  className="w-full lg:w-auto text-sm px-8 py-6 rounded-sm font-normal tracking-wide micro-interaction mouse-glow group relative overflow-hidden"
                   asChild
                 >
                   <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
@@ -141,12 +141,12 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            {/* Right Column - VSL */}
+            {/* Right Column - VSL - Appears first on mobile */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
-              className="lg:col-span-7"
+              className="lg:col-span-7 order-1 lg:order-2"
             >
               <div className="relative aspect-video rounded-sm overflow-hidden group cursor-pointer border border-white/5 shadow-elegant mouse-glow border-trace">
                 <div className="absolute inset-0 bg-navy-deep"></div>
