@@ -137,46 +137,11 @@ const HeroSection = () => {
               </div>
             </motion.div>
 
-            {/* Metrics - Glass Cards Floating */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.9, delay: 0.5 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto -mt-8 relative z-20"
-            >
-              <motion.div 
-                className="bg-card/40 backdrop-blur-md border border-white/10 rounded-lg p-6 text-center hover:border-gold/30 transition-all duration-500 shadow-lg"
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-3xl md:text-4xl font-light text-gold mb-2">13</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider leading-tight">Anos SBT</div>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-card/40 backdrop-blur-md border border-white/10 rounded-lg p-6 text-center hover:border-gold/30 transition-all duration-500 shadow-lg"
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-3xl md:text-4xl font-light text-gold mb-2">R$ 30M</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider leading-tight">Gerados</div>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-card/40 backdrop-blur-md border border-white/10 rounded-lg p-6 text-center hover:border-gold/30 transition-all duration-500 shadow-lg sm:col-span-1 col-span-1 mx-auto w-full sm:w-auto"
-                whileHover={{ y: -4 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="text-3xl md:text-4xl font-light text-gold mb-2">1000+</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider leading-tight">Marcas<br />Impactadas</div>
-              </motion.div>
-            </motion.div>
-
             {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               className="text-center"
             >
               <Button 
