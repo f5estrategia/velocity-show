@@ -24,9 +24,12 @@ const FinalCTASection = () => {
           <Button 
             size="lg"
             className="text-sm px-10 py-6 rounded-md font-medium shadow-2xl hover:shadow-3xl transition-all duration-300 mouse-glow relative overflow-hidden group"
+            asChild
           >
-            <span className="relative z-10">Começar Minha Transformação Agora</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
+            <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+              <span className="relative z-10">Começar Minha Transformação Agora</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
+            </a>
           </Button>
 
           <div className="inline-flex items-center gap-2 bg-gold/5 border border-gold/20 px-5 py-2.5 rounded-full">

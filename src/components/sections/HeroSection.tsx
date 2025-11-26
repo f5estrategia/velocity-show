@@ -131,9 +131,12 @@ const HeroSection = () => {
                 <Button 
                   size="lg" 
                   className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide micro-interaction mouse-glow group relative overflow-hidden"
+                  asChild
                 >
-                  <span className="relative z-10">Iniciar Jornada</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
+                  <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+                    <span className="relative z-10">Iniciar Jornada</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
+                  </a>
                 </Button>
               </motion.div>
             </div>
