@@ -38,7 +38,7 @@ const ProblemSection = () => {
               key={index}
               className="bg-card/50 backdrop-blur-sm border border-white/5 hover:border-gold/20 transition-all duration-300 group"
             >
-              <CardContent className="p-6">
+              <CardContent className="p-6 text-center flex flex-col items-center">
                 <problem.icon className="w-10 h-10 text-gold/60 mb-4 group-hover:text-gold transition-colors" strokeWidth={1.5} />
                 <h3 className="text-base font-semibold mb-2 text-gold">
                   {problem.title}
