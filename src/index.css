@@ -63,10 +63,20 @@ All colors MUST be HSL.
     --gradient-premium: linear-gradient(135deg, hsl(var(--gold-primary)) 0%, hsl(var(--gold-accent)) 50%, hsl(42 45% 70%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(var(--bg-primary)) 0%, hsl(var(--navy-deep)) 50%, hsl(var(--bg-primary)) 100%);
     --gradient-text-shine: linear-gradient(110deg, hsl(var(--gold-subtle)) 0%, hsl(var(--gold-primary)) 45%, hsl(42 50% 75%) 55%, hsl(var(--gold-primary)) 100%);
+    --gradient-aurora: linear-gradient(135deg, hsl(var(--gold-primary) / 0.1), hsl(var(--gold-accent) / 0.05), transparent);
+    
     --shadow-elegant: 0 12px 40px -8px hsl(0 0% 0% / 0.5);
     --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-premium: 0 30px 90px -30px hsl(var(--gold-primary) / 0.25);
+    --shadow-colored: 0 10px 40px -10px hsl(var(--gold-accent) / 0.3);
+    
     --glow-subtle: 0 0 40px hsl(var(--gold-whisper) / 0.15);
     --glow-premium: 0 8px 60px hsl(var(--gold-primary) / 0.25);
+    
+    /* Animations - Cinematic Motion */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-elegant: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     
     --sidebar-background: var(--bg-secondary);
     --sidebar-foreground: var(--text-secondary);
@@ -137,13 +147,101 @@ All colors MUST be HSL.
     border-color: hsl(var(--gold-whisper) / 0.2);
   }
   
-  /* Micro-interactions */
+  /* Micro-interactions - Motion-First */
   .micro-interaction {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .micro-interaction:hover {
     transform: translateY(-2px);
+  }
+  
+  /* Mouse-aware glow effect */
+  .mouse-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .mouse-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--gold-primary) / 0.15), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .mouse-glow:hover::before {
+    opacity: 1;
+  }
+  
+  /* Animated border - Tracing Beam */
+  @keyframes border-trace {
+    0%, 100% { 
+      opacity: 0.3;
+      transform: translateX(-100%);
+    }
+    50% { 
+      opacity: 1;
+      transform: translateX(100%);
+    }
+  }
+  
+  .border-trace {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .border-trace::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--gold-primary)), transparent);
+    animation: border-trace 3s ease-in-out infinite;
+  }
+  
+  /* Text reveal animation */
+  @keyframes text-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+  
+  .text-reveal {
+    animation: text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--reveal-delay, 0s);
+  }
+  
+  /* Shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--gold-primary) / 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
   }
   
   /* Reveal Animations */

@@ -38,7 +38,7 @@ const PricingSection = () => {
         </div>
 
         <div className="max-w-xl mx-auto">
-          <Card className="relative bg-card/50 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
+          <Card className="relative bg-card/50 backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden mouse-glow border-trace">
             {/* Gradient Accent */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent"></div>
             
@@ -76,12 +76,13 @@ const PricingSection = () => {
                 ))}
               </div>
 
-              {/* CTA */}
+              {/* CTA - Mouse-aware */}
               <Button 
-                className="w-full text-sm py-6 rounded-md font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full text-sm py-6 rounded-md font-medium shadow-lg hover:shadow-xl transition-all duration-300 mouse-glow relative overflow-hidden group"
                 size="lg"
               >
-                Começar Agora
+                <span className="relative z-10">Começar Agora</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
               </Button>
 
               {/* Footer Note */}
