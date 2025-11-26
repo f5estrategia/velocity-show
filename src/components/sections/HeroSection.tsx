@@ -40,12 +40,12 @@ const HeroSection = () => {
                 transition={{ duration: 0.9, delay: 0.2 }}
                 className="space-y-6"
               >
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.2] tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] tracking-tight">
                   Sua comunicação define sua 
-                  <span className="block mt-1 gradient-text">trajetória profissional</span>
+                  <span className="block mt-2 gradient-text">trajetória profissional</span>
                 </h1>
 
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
                   O único programa que une 13 anos de TV ao vivo 
                   com a experiência de um CEO que gerou R$ 30 milhões 
                   através da palavra.
@@ -60,16 +60,16 @@ const HeroSection = () => {
                 className="flex gap-8 pt-6 border-t border-white/5"
               >
                 <div>
-                  <div className="text-lg font-light text-gold mb-0.5">13</div>
-                  <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Anos SBT</div>
+                  <div className="text-2xl font-light text-gold mb-1">13</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Anos SBT</div>
                 </div>
                 <div>
-                  <div className="text-lg font-light text-gold mb-0.5">R$ 30M</div>
-                  <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Gerados</div>
+                  <div className="text-2xl font-light text-gold mb-1">R$ 30M</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Gerados</div>
                 </div>
                 <div>
-                  <div className="text-lg font-light text-gold mb-0.5">1000+</div>
-                  <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Marcas</div>
+                  <div className="text-2xl font-light text-gold mb-1">1000+</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">Marcas</div>
                 </div>
               </motion.div>
 
@@ -82,7 +82,7 @@ const HeroSection = () => {
               >
                 <Button 
                   size="lg" 
-                  className="text-xs px-6 py-5 rounded-sm font-normal tracking-wide micro-interaction"
+                  className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide micro-interaction"
                 >
                   Iniciar Jornada
                 </Button>
