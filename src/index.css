@@ -8,16 +8,17 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --bg-primary: 0 0% 3.9%;
-    --bg-secondary: 0 0% 6.7%;
-    --bg-card: 0 0% 10.2%;
-    --text-primary: 0 0% 100%;
-    --text-secondary: 0 0% 70.2%;
-    --text-muted: 0 0% 40%;
-    --accent-primary: 16 90% 58%;
-    --accent-glow: 16 100% 65%;
+    --bg-primary: 0 0% 4%;
+    --bg-secondary: 0 0% 7%;
+    --bg-card: 0 0% 9%;
+    --text-primary: 0 0% 96%;
+    --text-secondary: 0 0% 65%;
+    --text-muted: 0 0% 45%;
+    --gold-soft: 43 74% 66%;
+    --gold-elegant: 43 89% 70%;
+    --gold-muted: 43 60% 50%;
     --accent-blue: 216 94.1% 21%;
-    --border-subtle: 0 0% 100% / 0.1;
+    --border-subtle: 0 0% 100% / 0.08;
     
     --background: var(--bg-primary);
     --foreground: var(--text-primary);
@@ -28,8 +29,8 @@ All colors MUST be HSL.
     --popover: var(--bg-card);
     --popover-foreground: var(--text-primary);
     
-    --primary: var(--accent-primary);
-    --primary-foreground: 0 0% 100%;
+    --primary: var(--gold-elegant);
+    --primary-foreground: 0 0% 10%;
     
     --secondary: var(--bg-secondary);
     --secondary-foreground: var(--text-primary);
@@ -37,32 +38,32 @@ All colors MUST be HSL.
     --muted: var(--bg-secondary);
     --muted-foreground: var(--text-secondary);
     
-    --accent: var(--accent-glow);
-    --accent-foreground: 0 0% 0%;
+    --accent: var(--gold-soft);
+    --accent-foreground: 0 0% 10%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: var(--text-primary);
     
     --border: var(--border-subtle);
     --input: var(--bg-card);
-    --ring: var(--accent-primary);
+    --ring: var(--gold-elegant);
     
-    --radius: 1rem;
+    --radius: 0.5rem;
     
-    --gradient-hero: linear-gradient(135deg, hsl(var(--bg-primary)) 0%, hsl(var(--bg-card)) 50%, hsl(var(--accent-blue)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--text-primary)) 0%, hsl(var(--accent-glow)) 100%);
-    --shadow-accent: 0 10px 30px hsl(var(--accent-primary) / 0.4);
-    --shadow-card: 0 20px 40px hsl(var(--accent-primary) / 0.2);
-    --glow-accent: 0 0 40px hsl(var(--accent-glow) / 0.6);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-muted)) 0%, hsl(var(--gold-elegant)) 100%);
+    --gradient-gold-subtle: linear-gradient(135deg, hsl(var(--gold-muted) / 0.1) 0%, hsl(var(--gold-elegant) / 0.05) 100%);
+    --shadow-gold: 0 8px 24px hsl(var(--gold-soft) / 0.15);
+    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --glow-gold: 0 0 30px hsl(var(--gold-soft) / 0.3);
     
     --sidebar-background: var(--bg-secondary);
     --sidebar-foreground: var(--text-secondary);
-    --sidebar-primary: var(--accent-primary);
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: var(--gold-elegant);
+    --sidebar-primary-foreground: 0 0% 10%;
     --sidebar-accent: var(--bg-card);
     --sidebar-accent-foreground: var(--text-primary);
     --sidebar-border: var(--border-subtle);
-    --sidebar-ring: var(--accent-primary);
+    --sidebar-ring: var(--gold-elegant);
   }
 }
 
@@ -72,45 +73,53 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  
-  .font-display {
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .font-quote {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
   }
 }
 
 @layer utilities {
   .gradient-text {
-    background: var(--gradient-accent);
+    background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  .text-glow {
-    text-shadow: 0 0 20px hsl(var(--accent-glow) / 0.5);
+  .text-gold {
+    color: hsl(var(--gold-elegant));
   }
   
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .reveal.active {
     opacity: 1;
     transform: translateY(0);
+  }
+  
+  .carbon-texture {
+    position: relative;
+  }
+  
+  .carbon-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.03;
+    pointer-events: none;
   }
 }

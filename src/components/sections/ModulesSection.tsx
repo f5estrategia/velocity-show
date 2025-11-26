@@ -1,93 +1,104 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import carbonTexture from "@/assets/carbon-texture-2.jpg";
 
 const modules = [
   {
     number: "01",
-    title: "FUNDAÇÃO: CONTEÚDO REINA",
-    duration: "13 minutos",
+    title: "Fundação: Conteúdo Reina",
+    duration: "13 min",
     description: "Técnicas de oratória são inúteis sem conteúdo relevante. Aprenda a transformar suas experiências únicas em conteúdo que faz você ser ouvido.",
     lessons: [
-      "Boas-vindas e apresentação (3min)",
-      "Conteúdo - A Base de Tudo (4min)",
-      "Nivelar por Baixo (3min)",
-      "Não Seja Intelectual (3min)"
+      "Boas-vindas e apresentação",
+      "Conteúdo - A Base de Tudo",
+      "Nivelar por Baixo",
+      "Não Seja Intelectual"
     ]
   },
   {
     number: "02",
-    title: "PREPARAÇÃO: CHECKLIST ESTRATÉGICO",
-    duration: "17 minutos",
+    title: "Preparação: Checklist Estratégico",
+    duration: "17 min",
     description: "Descubra o framework jornalístico que uso há 20 anos para estruturar qualquer apresentação em minutos.",
     lessons: [
-      "5W1H e Pirâmide Invertida (4min)",
-      "Monte Seu Roteiro (4min)",
-      "Priorize Informação (5min)",
-      "Storytelling na Prática (4min)"
+      "5W1H e Pirâmide Invertida",
+      "Monte Seu Roteiro",
+      "Priorize Informação",
+      "Storytelling na Prática"
     ]
   },
   {
     number: "03",
-    title: "APRESENTAÇÃO: DESAFIANDO O MEDO",
-    duration: "20 minutos",
+    title: "Apresentação: Desafiando o Medo",
+    duration: "20 min",
     description: "Técnicas de TV ao vivo para você dominar a ansiedade e entrar no palco como dono do espaço.",
     lessons: [
-      "O Medo de Falar (4min)",
-      "Preparação da Voz (4min)",
-      "Linguagem Corporal (5min)",
-      "Palavras Difíceis (3min)",
-      "Abertura e Fechamento (4min)"
+      "O Medo de Falar",
+      "Preparação da Voz",
+      "Linguagem Corporal",
+      "Palavras Difíceis",
+      "Abertura e Fechamento"
     ]
   },
   {
     number: "04",
-    title: "DOMINANDO O IMPROVISO",
-    duration: "16 minutos",
+    title: "Dominando o Improviso",
+    duration: "16 min",
     description: "O que fazer quando dá tudo errado ao vivo. Segredos de quem improvisou milhares de vezes na TV.",
     lessons: [
-      "O Famoso Branco (3min)",
-      "Técnicas de Respiração (3min)",
-      "Pare de Pedir Desculpas (3min)",
-      "A Arte do Improviso (4min)",
-      "Lidando com Interrupções (3min)"
+      "O Famoso Branco",
+      "Técnicas de Respiração",
+      "Pare de Pedir Desculpas",
+      "A Arte do Improviso",
+      "Lidando com Interrupções"
     ]
   },
   {
     number: "05",
-    title: "ENGAJAMENTO DE LIDERANÇA",
-    duration: "24 minutos",
+    title: "Engajamento de Liderança",
+    duration: "24 min",
     description: "Como conquistar uma sala em 30 segundos. Técnicas de conexão que funcionam no palco e no Zoom.",
     lessons: [
-      "Criando Rapport (3min)",
-      "Lidando com Objeções (4min)",
-      "Posicionamento de Líder (4min)",
-      "Autenticidade é Estratégia (3min)",
-      "Engajando Plateia (4min)",
-      "Inspire para Liderar (3min)",
-      "Comunicação Digital (3min)"
+      "Criando Rapport",
+      "Lidando com Objeções",
+      "Posicionamento de Líder",
+      "Autenticidade é Estratégia",
+      "Engajando Plateia",
+      "Inspire para Liderar",
+      "Comunicação Digital"
     ]
   },
   {
     number: "06",
-    title: "COMUNICAÇÃO DIGITAL",
-    duration: "7 minutos",
+    title: "Comunicação Digital",
+    duration: "7 min",
     description: "Adapte sua comunicação para o mundo digital sem perder a essência.",
     lessons: [
-      "Câmera e Gravação (4min)",
-      "Plataformas e Formatos (3min)"
+      "Câmera e Gravação",
+      "Plataformas e Formatos"
     ]
   }
 ];
 
 const ModulesSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-secondary">
-      <div className="container mx-auto px-6">
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Carbon Texture Background */}
+      <div className="absolute inset-0">
+        <img 
+          src={carbonTexture}
+          alt=""
+          className="w-full h-full object-cover opacity-[0.02]"
+        />
+        <div className="absolute inset-0 bg-secondary/30"></div>
+      </div>
+
+      <div className="relative z-10 container mx-auto px-6">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            O QUE VOCÊ VAI <span className="gradient-text">APRENDER</span>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 tracking-tight">
+            O que você vai <span className="gradient-text">aprender</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
-            6 Módulos + Bônus | 125 minutos de conteúdo prático | Acesso vitalício
+          <p className="text-sm text-muted-foreground">
+            6 Módulos • 125 minutos • Acesso vitalício
           </p>
         </div>
 
@@ -97,29 +108,29 @@ const ModulesSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`module-${index}`}
-                className="bg-card border border-border rounded-xl overflow-hidden hover:border-accent-primary/50 transition-colors"
+                className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-lg overflow-hidden hover:border-gold/20 transition-colors"
               >
-                <AccordionTrigger className="px-6 md:px-8 py-6 hover:no-underline">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline">
                   <div className="flex items-start gap-4 text-left w-full">
-                    <span className="text-accent-primary font-display text-3xl md:text-4xl font-bold">
+                    <span className="text-gold font-light text-2xl md:text-3xl">
                       {module.number}
                     </span>
                     <div className="flex-1">
-                      <h3 className="font-display text-lg md:text-xl font-bold mb-1">
+                      <h3 className="text-sm md:text-base font-semibold mb-1">
                         {module.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">{module.duration}</p>
+                      <p className="text-xs text-muted-foreground">{module.duration}</p>
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 md:px-8 pb-6">
-                  <p className="text-muted-foreground italic mb-4 pl-16">
+                <AccordionContent className="px-6 pb-4">
+                  <p className="text-sm text-muted-foreground italic mb-3 pl-12">
                     {module.description}
                   </p>
-                  <ul className="space-y-2 pl-16">
+                  <ul className="space-y-2 pl-12">
                     {module.lessons.map((lesson, lessonIndex) => (
-                      <li key={lessonIndex} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-accent-primary mt-1">▸</span>
+                      <li key={lessonIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-gold/60 mt-0.5">•</span>
                         <span>{lesson}</span>
                       </li>
                     ))}
@@ -130,15 +141,15 @@ const ModulesSection = () => {
           </Accordion>
 
           {/* Bonus */}
-          <div className="mt-6 bg-gradient-to-r from-accent-primary/10 to-navy/10 border border-accent-primary/30 rounded-xl p-6 md:p-8">
+          <div className="mt-6 bg-gradient-to-r from-gold/5 to-transparent border border-gold/20 rounded-lg p-6">
             <div className="flex items-start gap-4">
-              <span className="text-accent-primary font-display text-3xl md:text-4xl font-bold">BÔNUS</span>
+              <span className="text-gold font-light text-2xl md:text-3xl">Bônus</span>
               <div>
-                <h3 className="font-display text-xl md:text-2xl font-bold mb-2">
-                  BÔNUS - SÍNTESE FINAL
+                <h3 className="text-base font-semibold mb-1">
+                  Síntese Final
                 </h3>
-                <p className="text-muted-foreground mb-2">Mensagem Final e Próximos Passos (12min)</p>
-                <p className="text-muted-foreground italic">
+                <p className="text-xs text-muted-foreground mb-2">Mensagem Final e Próximos Passos • 12 min</p>
+                <p className="text-sm text-muted-foreground italic">
                   Uma síntese poderosa de tudo que você aprendeu, pronta para aplicar imediatamente.
                 </p>
               </div>

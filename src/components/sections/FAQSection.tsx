@@ -3,7 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const faqs = [
   {
     question: "Para quem é esse programa?",
-    answer: "Para executivos, empresários, líderes e profissionais que querem usar a comunicação como ferramenta de resultados. Não é curso para 'falar bonito' - é para GERAR RESULTADOS."
+    answer: "Para executivos, empresários, líderes e profissionais que querem usar a comunicação como ferramenta de resultados. Não é curso para 'falar bonito' - é para gerar resultados."
   },
   {
     question: "Preciso ter experiência com oratória?",
@@ -23,16 +23,16 @@ const faqs = [
   },
   {
     question: "Emite certificado?",
-    answer: "Sim. Todos os tiers recebem certificado. O CEO Elite recebe certificado VIP assinado pessoalmente pelo Fernando."
+    answer: "Sim. Todos recebem certificado profissional de conclusão."
   }
 ];
 
 const FAQSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-secondary">
+    <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-6">
-        <h2 className="font-display text-3xl md:text-5xl font-bold text-center mb-16">
-          PERGUNTAS <span className="gradient-text">FREQUENTES</span>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-12 md:mb-16 tracking-tight">
+          Perguntas <span className="gradient-text">frequentes</span>
         </h2>
 
         <div className="max-w-3xl mx-auto">
@@ -41,15 +41,15 @@ const FAQSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`faq-${index}`}
-                className="bg-card border border-border rounded-xl overflow-hidden hover:border-accent-primary/50 transition-colors"
+                className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-lg overflow-hidden hover:border-gold/20 transition-colors"
               >
-                <AccordionTrigger className="px-6 md:px-8 py-6 text-left hover:no-underline">
-                  <span className="font-display text-lg md:text-xl font-semibold pr-4">
+                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
+                  <span className="text-sm md:text-base font-semibold pr-4">
                     {faq.question}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 md:px-8 pb-6">
-                  <p className="text-muted-foreground leading-relaxed">
+                <AccordionContent className="px-6 pb-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </p>
                 </AccordionContent>

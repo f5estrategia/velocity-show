@@ -2,38 +2,34 @@ import { Button } from "@/components/ui/button";
 
 const FinalCTASection = () => {
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-background via-navy/20 to-background relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent-primary/5 via-transparent to-transparent"></div>
+    <section className="py-24 md:py-32 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent"></div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-4xl md:text-6xl font-black mb-8 leading-tight">
-            <span className="gradient-text">
-              O MICROFONE ESTÁ LIGADO.<br />
-              É HORA DE IR AO AR.
-            </span>
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight">
+            O microfone está ligado.
+            <span className="block mt-2 gradient-text">É hora de ir ao ar.</span>
           </h2>
 
-          <div className="text-xl md:text-2xl text-muted-foreground mb-12 space-y-4">
+          <div className="text-sm md:text-base text-muted-foreground space-y-2 max-w-xl mx-auto">
             <p>
-              Quantas oportunidades você já perdeu 
-              por não saber se comunicar?
+              Quantas oportunidades você já perdeu por não saber se comunicar?
             </p>
-            <p className="text-foreground font-semibold">
+            <p className="text-foreground/90">
               Quantas ainda vai perder?
             </p>
           </div>
 
           <Button 
             size="lg"
-            className="text-lg md:text-xl px-12 md:px-16 py-7 md:py-8 rounded-lg font-bold shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 mb-8"
+            className="text-sm px-10 py-6 rounded-md font-medium shadow-2xl hover:shadow-3xl transition-all duration-300"
           >
-            COMEÇAR MINHA TRANSFORMAÇÃO AGORA
+            Começar Minha Transformação Agora
           </Button>
 
-          <div className="inline-flex items-center gap-2 bg-accent-primary/20 border border-accent-primary px-6 py-3 rounded-full">
-            <span className="text-accent-primary font-semibold">
+          <div className="inline-flex items-center gap-2 bg-gold/5 border border-gold/20 px-5 py-2.5 rounded-full">
+            <span className="text-gold text-xs font-medium">
               Condição especial de lançamento - Vagas limitadas
             </span>
           </div>
