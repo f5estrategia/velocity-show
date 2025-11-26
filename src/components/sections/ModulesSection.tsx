@@ -1,3 +1,6 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Clock } from "lucide-react";
+import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import carbonTexture from "@/assets/carbon-texture-2.jpg";
 import modulo1 from "@/assets/modulo1-fundacao.jpg";
@@ -116,10 +119,20 @@ const ModulesSection = () => {
         <div className="max-w-6xl mx-auto">
           <Accordion type="single" collapsible className="space-y-6">
             {modules.map((module, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  ease: [0.16, 1, 0.3, 1]
+                }}
+              >
               <AccordionItem 
-                key={index} 
                 value={`module-${index}`}
-                className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-lg overflow-hidden hover:border-gold/20 transition-all duration-500 group"
+                className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-lg overflow-hidden hover:border-gold/20 transition-all duration-500 group mouse-glow"
               >
                 <AccordionTrigger className="px-0 py-0 hover:no-underline">
                   <div className="flex flex-col md:flex-row items-start gap-6 text-left w-full p-6">
@@ -162,6 +175,7 @@ const ModulesSection = () => {
                   </div>
                 </AccordionContent>
               </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
 
