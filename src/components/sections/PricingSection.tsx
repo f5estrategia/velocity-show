@@ -4,14 +4,14 @@ import { Check } from "lucide-react";
 import carbonTexture from "@/assets/carbon-texture-2.jpg";
 
 const features = [
-  "Programa completo com 6 módulos práticos",
+  "Programa completo com 5 módulos práticos",
   "125 minutos de conteúdo estratégico",
   "Kit executivo com materiais complementares",
   "Certificado profissional de conclusão",
-  "Acesso vitalício à plataforma",
+  "Acesso aos novos treinamentos futuros",
+  "Comunicação, vendas e estratégias digitais",
   "Grupo exclusivo de networking",
-  "Suporte direto via comunidade",
-  "Atualizações futuras inclusas"
+  "Suporte direto via comunidade"
 ];
 
 const PricingSection = () => {
@@ -47,16 +47,29 @@ const PricingSection = () => {
               <div className="text-center mb-8 pb-8 border-b border-white/5">
                 <div className="inline-block mb-4">
                   <span className="text-[10px] tracking-[0.2em] uppercase text-gold/80 font-light">
-                    Programa Completo
+                    Preço de Lançamento - Programa Completo
                   </span>
                 </div>
-                <div className="mb-2">
-                  <span className="text-5xl md:text-6xl font-light tracking-tight">
-                    <span className="gradient-text">R$ 1.997</span>
+                
+                {/* Valor Original */}
+                <div className="mb-3">
+                  <span className="text-lg text-muted-foreground line-through">
+                    De R$ 997
                   </span>
                 </div>
+                
+                {/* Valor com Desconto - Destaque */}
+                <div className="mb-4">
+                  <div className="inline-block bg-gold/10 border border-gold/30 rounded-lg px-6 py-4">
+                    <div className="text-sm text-gold/80 uppercase tracking-wider mb-1">Por apenas</div>
+                    <span className="text-4xl md:text-5xl font-light tracking-tight">
+                      <span className="gradient-text">5x de R$ 110</span>
+                    </span>
+                  </div>
+                </div>
+                
                 <p className="text-xs text-muted-foreground">
-                  ou 12x de R$ 199,70 no cartão
+                  Ou R$ 550 à vista no cartão ou PIX
                 </p>
               </div>
 
