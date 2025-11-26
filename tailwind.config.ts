@@ -14,20 +14,21 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        display: ['Outfit', 'DM Sans', 'sans-serif'],
-        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        sans: ['Sora', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Cormorant Garamond', 'Georgia', 'serif'],
+        serif: ['Cormorant Garamond', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
       },
       fontSize: {
-        'xs': ['0.6875rem', { lineHeight: '1rem', letterSpacing: '0.05em' }],
-        'sm': ['0.8125rem', { lineHeight: '1.25rem', letterSpacing: '0.01em' }],
-        'base': ['0.9375rem', { lineHeight: '1.5rem', letterSpacing: '0' }],
-        'lg': ['1.0625rem', { lineHeight: '1.75rem', letterSpacing: '-0.01em' }],
-        'xl': ['1.25rem', { lineHeight: '1.875rem', letterSpacing: '-0.01em' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.02em' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '-0.02em' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '-0.03em' }],
-        '5xl': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.03em' }],
+        'xs': ['0.6875rem', { lineHeight: '1.1rem', letterSpacing: '0.03em' }],
+        'sm': ['0.8125rem', { lineHeight: '1.3rem', letterSpacing: '0.005em' }],
+        'base': ['0.875rem', { lineHeight: '1.5rem', letterSpacing: '0.002em' }],
+        'lg': ['1rem', { lineHeight: '1.65rem', letterSpacing: '0' }],
+        'xl': ['1.125rem', { lineHeight: '1.75rem', letterSpacing: '-0.01em' }],
+        '2xl': ['1.375rem', { lineHeight: '1.85rem', letterSpacing: '-0.015em' }],
+        '3xl': ['1.75rem', { lineHeight: '2.1rem', letterSpacing: '-0.02em' }],
+        '4xl': ['2.125rem', { lineHeight: '2.4rem', letterSpacing: '-0.025em' }],
+        '5xl': ['2.75rem', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
+        '6xl': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.035em' }],
       },
       colors: {
         gold: {
