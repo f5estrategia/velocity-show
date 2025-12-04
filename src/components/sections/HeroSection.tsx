@@ -85,20 +85,20 @@ const HeroSection = () => {
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-[1.15] tracking-tight">
                 <span className="text-reveal" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
-                  Sua <span className="relative inline-block">
-                    comunicação
+                  A comunicação é a <span className="relative inline-block">
+                    única arma
                     <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/60 to-transparent"></span>
-                  </span> define sua
+                  </span>
                 </span>
                 <span className="block mt-2 gradient-text font-impact font-bold tracking-tight text-reveal" style={{ '--reveal-delay': '0.2s' } as React.CSSProperties}>
-                  trajetória profissional
+                  que você tem para jogar esse jogo
                 </span>
               </h1>
 
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                O único programa que une 13 anos de TV ao vivo 
-                com a experiência de um CEO que gerou R$ 30 milhões 
-                através da palavra.
+                Assista ao vídeo e descubra como uma pessoa que falava "poblema" 
+                virou apresentador de TV nacional — e como você pode dominar 
+                essa habilidade em 5 módulos.
               </p>
             </motion.div>
 

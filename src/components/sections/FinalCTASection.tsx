@@ -8,16 +8,17 @@ const FinalCTASection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight">
-            O microfone está ligado.
-            <span className="block mt-2 gradient-text">É hora de ir ao ar.</span>
+            Quanto mais tempo você vai ficar
+            <span className="block mt-2 gradient-text">reclamando?</span>
           </h2>
 
-          <div className="text-sm md:text-base text-muted-foreground space-y-2 max-w-xl mx-auto">
+          <div className="text-sm md:text-base text-muted-foreground space-y-3 max-w-xl mx-auto">
             <p>
-              Quantas oportunidades você já perdeu por não saber se comunicar?
+              Vai ficar assistindo outras pessoas que sabem menos que você 
+              conquistarem mais sucesso?
             </p>
-            <p className="text-foreground/90">
-              Quantas ainda vai perder?
+            <p className="text-foreground/90 text-lg">
+              Chegou a hora. Clique no botão e venha para essa conversa de <span className="text-gold">coração aberto.</span>
             </p>
           </div>
 
@@ -27,7 +28,7 @@ const FinalCTASection = () => {
             asChild
           >
             <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
-              <span className="relative z-10">Começar Minha Transformação Agora</span>
+              <span className="relative z-10">Quero Ser Protagonista da Minha História</span>
               <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
             </a>
           </Button>
