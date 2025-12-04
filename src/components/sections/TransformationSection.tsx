@@ -79,8 +79,8 @@ const TransformationSection = () => {
         {/* Impact Quote */}
         <div className="max-w-3xl mx-auto text-center">
           <blockquote className="text-lg md:text-xl italic text-foreground/90 leading-relaxed">
-            "Não adianta ficar reclamando. 
-            O que as pessoas de sucesso têm é <span className="text-gold">coragem.</span>"
+            "Todas as oportunidades serão pequenas para você 
+            depois de aprender a <span className="text-gold">se comunicar.</span>"
           </blockquote>
         </div>
       </div>

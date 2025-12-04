@@ -1,5 +1,8 @@
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
+import CausaRaizSection from "@/components/sections/CausaRaizSection";
+import DiferencialSection from "@/components/sections/DiferencialSection";
+import TrendSection from "@/components/sections/TrendSection";
 import TransformationSection from "@/components/sections/TransformationSection";
 import InstructorSection from "@/components/sections/InstructorSection";
 import ModulesSection from "@/components/sections/ModulesSection";
@@ -15,6 +18,9 @@ const Index = () => {
     <main className="bg-background overflow-x-hidden">
       <HeroSection />
       <ProblemSection />
+      <CausaRaizSection />
+      <DiferencialSection />
+      <TrendSection />
       <TransformationSection />
       <InstructorSection />
       <ModulesSection />

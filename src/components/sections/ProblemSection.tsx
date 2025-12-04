@@ -52,12 +52,18 @@ const ProblemSection = () => {
         </div>
 
         {/* Quote */}
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center space-y-8">
           <blockquote className="text-lg md:text-xl italic mb-4 leading-relaxed text-foreground/90">
             "O medo de falar em público é o maior medo da humanidade.
             Maior que o medo da morte."
           </blockquote>
-          <p className="text-gold text-sm font-medium">— Fernando Machado</p>
+          
+          <div className="bg-card/50 backdrop-blur-sm border border-gold/10 px-6 py-5 rounded-sm inline-block">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              "Não adianta ficar reclamando e nem mesmo ficar assistindo outras pessoas 
+              que sabem menos que você ter mais sucesso que você. <span className="text-gold">O que elas têm? Coragem.</span>"
+            </p>
+          </div>
         </div>
       </div>
     </section>
