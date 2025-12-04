@@ -1,7 +1,79 @@
 import { Button } from "@/components/ui/button";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import carbonTexture from "@/assets/carbon-texture-1.jpg";
+
+const VTURB_PLAYER_ID = "vid-6931672e8f0253bca66460a0";
+const VTURB_SCRIPT_URL = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6931672e8f0253bca66460a0/v4/player.js";
+
+const VSLPlayer = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    // Check if script already exists
+    const existingScript = document.querySelector(`script[src="${VTURB_SCRIPT_URL}"]`);
+    if (existingScript) {
+      setScriptLoaded(true);
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = VTURB_SCRIPT_URL;
+    script.async = true;
+    script.onload = () => setScriptLoaded(true);
+    document.head.appendChild(script);
+
+    return () => {
+      // Don't remove script on unmount to preserve player state
+    };
+  }, []);
+
+  useEffect(() => {
+    if (scriptLoaded) {
+      // Give player a moment to initialize
+      const timer = setTimeout(() => setIsLoading(false), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [scriptLoaded]);
+
+  return (
+    <div className="relative aspect-video rounded-sm overflow-hidden border border-white/5 shadow-elegant">
+      {/* Loading skeleton */}
+      {isLoading && (
+        <div className="absolute inset-0 bg-navy-deep flex items-center justify-center z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-gold/5 animate-pulse" />
+          <div className="relative">
+            <motion.div 
+              className="absolute inset-0 bg-gold/5 blur-3xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.5, 0.3]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <div className="relative w-16 h-16 rounded-full border border-gold-whisper/40 flex items-center justify-center">
+              <div className="w-3 h-3 bg-gold/60 rounded-full animate-pulse" />
+            </div>
+          </div>
+          <p className="absolute bottom-6 left-6 text-[11px] text-muted-foreground uppercase tracking-wider">
+            Carregando apresentação...
+          </p>
+        </div>
+      )}
+      
+      {/* VTurb Player */}
+      <vturb-smartplayer 
+        id={VTURB_PLAYER_ID} 
+        style={{ display: 'block', margin: '0 auto', width: '100%' }}
+      />
+    </div>
+  );
+};
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -108,33 +180,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
             >
-              <div className="relative aspect-video rounded-sm overflow-hidden group cursor-pointer border border-white/5 shadow-elegant mouse-glow border-trace">
-                <div className="absolute inset-0 bg-navy-deep"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <motion.div 
-                      className="absolute inset-0 bg-gold/5 blur-3xl"
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.5, 0.3]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    />
-                    <div className="relative w-16 h-16 rounded-full border border-gold-whisper/40 flex items-center justify-center group-hover:border-gold/60 group-hover:scale-110 transition-all duration-500">
-                      <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[14px] border-l-gold border-b-[8px] border-b-transparent ml-1 group-hover:border-l-gold-accent transition-colors duration-300"></div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-[11px] text-muted-foreground uppercase tracking-wider">
-                    Assista à Apresentação
-                  </p>
-                </div>
-              </div>
+              <VSLPlayer />
             </motion.div>
 
             {/* CTA */}
