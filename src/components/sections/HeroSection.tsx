@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import carbonTexture from "@/assets/carbon-texture-1.jpg";
-import logoTreinamento from "@/assets/logo-treinamento.png";
+import logoTreinamento from "@/assets/logo-treinamento.svg";
 
 const VTURB_PLAYER_ID = "vid-693170b030e3e1f3170aac15";
 const VTURB_SCRIPT_URL = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693170b030e3e1f3170aac15/v4/player.js";
@@ -145,7 +145,7 @@ const HeroSection = () => {
             <img 
               src={logoTreinamento} 
               alt="COMUNICAÇÃO: O Discurso do Líder - Fernando Machado" 
-              className="h-20 md:h-28 lg:h-36 w-auto mx-auto"
+              className="w-[280px] md:w-[400px] lg:w-[500px] h-auto mx-auto"
             />
           </motion.div>
 

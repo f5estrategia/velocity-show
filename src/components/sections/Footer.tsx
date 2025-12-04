@@ -1,5 +1,5 @@
 import { Instagram, Youtube, Linkedin } from "lucide-react";
-import logoTreinamento from "@/assets/logo-treinamento.png";
+import logoTreinamento from "@/assets/logo-treinamento.svg";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
             <img 
               src={logoTreinamento} 
               alt="COMUNICAÇÃO: O Discurso do Líder" 
-              className="h-10 w-auto mb-3 opacity-80"
+              className="w-[180px] h-auto mb-3 opacity-80"
             />
             <p className="text-xs text-muted-foreground">
               F5 Estratégia • Comunicação que gera resultados
