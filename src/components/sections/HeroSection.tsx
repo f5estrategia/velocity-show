@@ -140,12 +140,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-12 lg:mb-16"
+            className="mb-10 lg:mb-14"
           >
             <img 
               src={logoTreinamento} 
               alt="COMUNICAÇÃO: O Discurso do Líder - Fernando Machado" 
-              className="h-12 md:h-16 lg:h-20 w-auto mx-auto"
+              className="h-20 md:h-28 lg:h-36 w-auto mx-auto"
             />
           </motion.div>
 
