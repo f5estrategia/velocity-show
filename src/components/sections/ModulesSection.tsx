@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import carbonTexture from "@/assets/carbon-texture-2.jpg";
@@ -97,7 +97,7 @@ const ModulesSection = () => {
         <div className="absolute inset-0 bg-secondary/30"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 tracking-tight">
             O que você vai <span className="gradient-text">aprender</span>
@@ -108,7 +108,7 @@ const ModulesSection = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-6">
+          <Accordion type="single" collapsible className="space-y-4 md:space-y-6">
             {modules.map((module, index) => (
               <motion.div
                 key={index}
@@ -126,7 +126,7 @@ const ModulesSection = () => {
                 className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-lg overflow-hidden hover:border-gold/20 transition-all duration-500 group mouse-glow"
               >
                 <AccordionTrigger className="px-0 py-0 hover:no-underline">
-                  <div className="flex flex-col md:flex-row items-start gap-6 text-left w-full p-6">
+                  <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6 text-left w-full p-4 md:p-6">
                     {/* Thumbnail */}
                     <div className="w-full md:w-48 aspect-video rounded-sm overflow-hidden flex-shrink-0">
                       <img 
@@ -137,12 +137,12 @@ const ModulesSection = () => {
                     </div>
                     
                     {/* Content */}
-                    <div className="flex-1 flex items-start gap-4">
-                      <span className="text-gold font-impact text-3xl md:text-4xl tracking-tight">
+                    <div className="flex-1 flex items-start gap-3 md:gap-4">
+                      <span className="text-gold font-impact text-2xl md:text-4xl tracking-tight">
                         {module.number}
                       </span>
                       <div className="flex-1">
-                        <h3 className="text-base md:text-lg font-semibold mb-2 font-display">
+                        <h3 className="text-sm md:text-lg font-semibold mb-1 md:mb-2 font-display">
                           {module.title}
                         </h3>
                         <p className="text-xs text-muted-foreground">{module.duration}</p>
@@ -150,7 +150,7 @@ const ModulesSection = () => {
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
+                <AccordionContent className="px-4 md:px-6 pb-4 md:pb-6">
                   <div className="md:pl-56">
                     <p className="text-sm text-muted-foreground italic mb-4">
                       {module.description}
@@ -171,19 +171,32 @@ const ModulesSection = () => {
           </Accordion>
 
           {/* Bonus */}
-          <div className="mt-6 bg-gradient-to-r from-gold/5 to-transparent border border-gold/20 rounded-lg p-6">
-            <div className="flex items-start gap-4">
-              <span className="text-gold font-light text-2xl md:text-3xl">Bônus</span>
+          <div className="mt-4 md:mt-6 bg-gradient-to-r from-gold/5 to-transparent border border-gold/20 rounded-lg p-4 md:p-6">
+            <div className="flex items-start gap-3 md:gap-4">
+              <span className="text-gold font-light text-xl md:text-3xl">Bônus</span>
               <div>
-                <h3 className="text-base font-semibold mb-1">
+                <h3 className="text-sm md:text-base font-semibold mb-1">
                   Síntese Final
                 </h3>
                 <p className="text-xs text-muted-foreground mb-2">Mensagem Final e Próximos Passos • 12 min</p>
-                <p className="text-sm text-muted-foreground italic">
+                <p className="text-xs md:text-sm text-muted-foreground italic">
                   Uma síntese poderosa de tudo que você aprendeu, pronta para aplicar imediatamente.
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-10 md:mt-12">
+            <Button 
+              size="lg"
+              className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide w-full sm:w-auto"
+              asChild
+            >
+              <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+                Acessar o Programa Completo
+              </a>
+            </Button>
           </div>
         </div>
       </div>

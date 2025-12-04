@@ -27,12 +27,12 @@ const PricingSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/50 to-background"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6">
-        <div className="text-center mb-16">
+      <div className="relative z-10 container mx-auto px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4 tracking-tight">
             Transforme Sua <span className="gradient-text">Comunicação</span>
           </h2>
-          <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm text-muted-foreground max-w-2xl mx-auto px-4">
             Investimento que retorna em uma única apresentação bem-sucedida
           </p>
         </div>

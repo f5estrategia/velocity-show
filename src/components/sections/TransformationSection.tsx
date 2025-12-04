@@ -1,5 +1,6 @@
 import { Shield, TrendingUp, Users, Network, Zap, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import carbonTexture from "@/assets/carbon-texture-1.jpg";
 
 const transformations = [
@@ -53,22 +54,22 @@ const TransformationSection = () => {
           O que você vai <span className="gradient-text">conquistar</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto mb-12 md:mb-16">
           {transformations.map((item, index) => (
             <Card 
               key={index}
               className="bg-card/50 backdrop-blur-sm border border-white/5 hover:border-gold/20 transition-all duration-300 text-center group"
             >
-              <CardContent className="p-6">
-                <div className="flex justify-center mb-4">
-                  <div className="bg-gold/5 p-3 rounded-lg border border-gold/10 group-hover:border-gold/20 transition-colors">
-                    <item.icon className="w-6 h-6 text-gold" strokeWidth={1.5} />
+              <CardContent className="p-4 md:p-6">
+                <div className="flex justify-center mb-3 md:mb-4">
+                  <div className="bg-gold/5 p-2 md:p-3 rounded-lg border border-gold/10 group-hover:border-gold/20 transition-colors">
+                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-gold" strokeWidth={1.5} />
                   </div>
                 </div>
-                <h3 className="text-sm font-semibold mb-2 text-gold">
+                <h3 className="text-xs md:text-sm font-semibold mb-1 md:mb-2 text-gold">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-[11px] md:text-sm text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </CardContent>
@@ -77,11 +78,21 @@ const TransformationSection = () => {
         </div>
 
         {/* Impact Quote */}
-        <div className="max-w-3xl mx-auto text-center">
-          <blockquote className="text-lg md:text-xl italic text-foreground/90 leading-relaxed">
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <blockquote className="text-base md:text-xl italic text-foreground/90 leading-relaxed px-4">
             "Todas as oportunidades serão pequenas para você 
             depois de aprender a <span className="text-gold">se comunicar.</span>"
           </blockquote>
+
+          <Button 
+            size="lg"
+            className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide"
+            asChild
+          >
+            <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+              Quero Transformar Minha Comunicação
+            </a>
+          </Button>
         </div>
       </div>
     </section>
