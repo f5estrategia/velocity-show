@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import carbonTexture from "@/assets/carbon-texture-1.jpg";
 
-const VTURB_PLAYER_ID = "vid-6931672e8f0253bca66460a0";
-const VTURB_SCRIPT_URL = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/6931672e8f0253bca66460a0/v4/player.js";
+const VTURB_PLAYER_ID = "vid-693170b030e3e1f3170aac15";
+const VTURB_SCRIPT_URL = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693170b030e3e1f3170aac15/v4/player.js";
 
 const VSLPlayer = () => {
   const [isLoading, setIsLoading] = useState(true);
