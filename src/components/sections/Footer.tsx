@@ -1,17 +1,20 @@
 import { Instagram, Youtube, Linkedin } from "lucide-react";
+import logoTreinamento from "@/assets/logo-treinamento.png";
 
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-white/5 py-12">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-semibold text-gold mb-2">
-              F5 Estratégia
-            </h3>
+            <img 
+              src={logoTreinamento} 
+              alt="COMUNICAÇÃO: O Discurso do Líder" 
+              className="h-10 w-auto mb-3 opacity-80"
+            />
             <p className="text-xs text-muted-foreground">
-              Comunicação que gera resultados
+              F5 Estratégia • Comunicação que gera resultados
             </p>
           </div>
 
