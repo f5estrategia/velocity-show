@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import carbonTexture from "@/assets/carbon-texture-1.jpg";
+import logoTreinamento from "@/assets/logo-treinamento.png";
 
 const VTURB_PLAYER_ID = "vid-693170b030e3e1f3170aac15";
 const VTURB_SCRIPT_URL = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693170b030e3e1f3170aac15/v4/player.js";
@@ -139,11 +140,13 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-16 lg:mb-20"
+            className="mb-12 lg:mb-16"
           >
-            <span className="text-[9px] md:text-[10px] tracking-[0.3em] uppercase text-gold-subtle font-light">
-              Programa Executivo
-            </span>
+            <img 
+              src={logoTreinamento} 
+              alt="COMUNICAÇÃO: O Discurso do Líder - Fernando Machado" 
+              className="h-12 md:h-16 lg:h-20 w-auto mx-auto"
+            />
           </motion.div>
 
           {/* Single Column Layout */}
