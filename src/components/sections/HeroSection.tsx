@@ -171,7 +171,7 @@ const HeroSection = () => {
               </h1>
 
               <p className="text-xs md:text-lg text-muted-foreground leading-relaxed max-w-xs md:max-w-2xl mx-auto">
-                Assista ao vídeo e descubra como uma pessoa que falava "poblema" virou apresentador de TV, e como você pode dominar essa habilidade.
+                Assista ao vídeo e descubra como uma pessoa que falava "poblema" virou apresentador de TV — e como você pode dominar essa habilidade de forma prática.
               </p>
             </motion.div>
 
