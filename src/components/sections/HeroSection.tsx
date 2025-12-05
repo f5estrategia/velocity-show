@@ -171,7 +171,7 @@ const HeroSection = () => {
               </h1>
 
               <p className="text-xs md:text-lg text-muted-foreground leading-relaxed max-w-xs md:max-w-2xl mx-auto">
-                Descubra o método para dominar sua comunicação em 5 módulos.
+                Assista ao vídeo e descubra como uma pessoa que falava "poblema" virou apresentador de TV, e como você pode dominar essa habilidade.
               </p>
             </motion.div>
 
