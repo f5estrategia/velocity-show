@@ -99,7 +99,7 @@ const HeroSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen md:flex md:items-center overflow-hidden"
+      className="relative md:min-h-screen md:flex md:items-center overflow-hidden"
       style={{
         '--mouse-x': `${mousePosition.x}px`,
         '--mouse-y': `${mousePosition.y}px`,
