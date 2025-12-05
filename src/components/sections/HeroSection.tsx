@@ -99,7 +99,7 @@ const HeroSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen md:flex md:items-center overflow-hidden"
       style={{
         '--mouse-x': `${mousePosition.x}px`,
         '--mouse-y': `${mousePosition.y}px`,
@@ -133,47 +133,45 @@ const HeroSection = () => {
       </div>
 
       {/* Content - Editorial Layout */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32">
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 pt-6 pb-12 md:py-32">
         <div className="max-w-7xl mx-auto">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-10 lg:mb-14"
+            className="mb-4 md:mb-10 lg:mb-14"
           >
             <img 
               src={logoTreinamento} 
               alt="COMUNICAÇÃO: O Discurso do Líder - Fernando Machado" 
-              className="w-[280px] md:w-[400px] lg:w-[500px] h-auto mx-auto"
+              className="w-[180px] md:w-[400px] lg:w-[500px] h-auto mx-auto"
             />
           </motion.div>
 
           {/* Single Column Layout */}
-          <div className="max-w-5xl mx-auto space-y-12">
+          <div className="max-w-5xl mx-auto space-y-6 md:space-y-12">
             {/* Headline and Subheadline */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="space-y-6 text-center"
+              className="space-y-3 md:space-y-6 text-center"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-[1.15] tracking-tight">
+              <h1 className="text-2xl md:text-5xl lg:text-6xl font-display font-medium leading-[1.15] tracking-tight">
                 <span className="text-reveal" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
                   A comunicação é a <span className="relative inline-block">
                     única arma
                     <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/60 to-transparent"></span>
                   </span>
                 </span>
-                <span className="block mt-2 gradient-text font-impact font-bold tracking-tight text-reveal" style={{ '--reveal-delay': '0.2s' } as React.CSSProperties}>
+                <span className="block mt-1 md:mt-2 gradient-text font-impact font-bold tracking-tight text-reveal" style={{ '--reveal-delay': '0.2s' } as React.CSSProperties}>
                   que você tem para jogar esse jogo
                 </span>
               </h1>
 
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Assista ao vídeo e descubra como uma pessoa que falava "poblema" 
-                virou apresentador de TV nacional — e como você pode dominar 
-                essa habilidade em 5 módulos.
+              <p className="text-xs md:text-lg text-muted-foreground leading-relaxed max-w-xs md:max-w-2xl mx-auto">
+                Descubra o método para dominar sua comunicação em 5 módulos.
               </p>
             </motion.div>
 
