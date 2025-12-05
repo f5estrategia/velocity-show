@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: "Por quanto tempo terei acesso?",
-    answer: "Acesso vitalício. Uma vez aluno, sempre aluno. Você pode reassistir quantas vezes quiser, no seu ritmo."
+    answer: "Acesso por 1 ano. Você pode assistir quantas vezes quiser, no seu ritmo, durante esse período."
   },
   {
     question: "Serve para comunicação digital também?",
