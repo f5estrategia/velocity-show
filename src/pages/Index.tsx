@@ -5,6 +5,7 @@ import DiferencialSection from "@/components/sections/DiferencialSection";
 import TrendSection from "@/components/sections/TrendSection";
 import TransformationSection from "@/components/sections/TransformationSection";
 import InstructorSection from "@/components/sections/InstructorSection";
+import JourneySection from "@/components/sections/JourneySection";
 import ModulesSection from "@/components/sections/ModulesSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import PricingSection from "@/components/sections/PricingSection";
@@ -23,6 +24,7 @@ const Index = () => {
       <TrendSection />
       <TransformationSection />
       <InstructorSection />
+      <JourneySection />
       <ModulesSection />
       <TestimonialsSection />
       <PricingSection />
