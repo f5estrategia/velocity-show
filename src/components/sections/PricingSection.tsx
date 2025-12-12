@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, Clock } from "lucide-react";
 import carbonTexture from "@/assets/carbon-texture-2.jpg";
+import { useState, useEffect } from "react";
 
 const features = [
   "Programa completo com 5 módulos práticos",
@@ -13,6 +14,68 @@ const features = [
   "Grupo exclusivo de networking",
   "Suporte direto via comunidade"
 ];
+
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState(() => {
+    const saved = sessionStorage.getItem('countdown-end');
+    if (saved) {
+      const remaining = Math.max(0, Math.floor((parseInt(saved) - Date.now()) / 1000));
+      return remaining;
+    }
+    const endTime = Date.now() + 15 * 60 * 1000;
+    sessionStorage.setItem('countdown-end', endTime.toString());
+    return 15 * 60;
+  });
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+    
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+
+  return (
+    <div className="flex flex-col items-center gap-3 mb-6">
+      <div className="flex items-center gap-2 text-gold/80">
+        <Clock className="w-4 h-4" />
+        <span className="text-[10px] tracking-[0.15em] uppercase font-light">
+          Oferta válida por tempo limitado
+        </span>
+      </div>
+      <div className="flex items-center gap-3">
+        <div className="flex flex-col items-center">
+          <div className="bg-background/50 border border-gold/20 rounded-md px-4 py-2 min-w-[60px]">
+            <span className="text-2xl md:text-3xl font-light gradient-text tabular-nums">
+              {String(minutes).padStart(2, '0')}
+            </span>
+          </div>
+          <span className="text-[9px] uppercase tracking-wider text-muted-foreground mt-1">min</span>
+        </div>
+        <span className="text-xl text-gold/50 font-light">:</span>
+        <div className="flex flex-col items-center">
+          <div className="bg-background/50 border border-gold/20 rounded-md px-4 py-2 min-w-[60px]">
+            <span className="text-2xl md:text-3xl font-light gradient-text tabular-nums">
+              {String(seconds).padStart(2, '0')}
+            </span>
+          </div>
+          <span className="text-[9px] uppercase tracking-wider text-muted-foreground mt-1">seg</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const PricingSection = () => {
   return (
@@ -45,6 +108,8 @@ const PricingSection = () => {
             <CardContent className="p-8 md:p-10">
               {/* Header */}
               <div className="text-center mb-8 pb-8 border-b border-white/5">
+                <CountdownTimer />
+                
                 <div className="inline-block mb-4">
                   <span className="text-[10px] tracking-[0.2em] uppercase text-gold/80 font-light">
                     Preço de Lançamento - Programa Completo
