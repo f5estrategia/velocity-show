@@ -62,8 +62,8 @@ const PricingSection = () => {
                 <div className="mb-4">
                   <div className="inline-block bg-gold/10 border border-gold/30 rounded-lg px-6 py-4">
                     <div className="text-sm text-gold/80 uppercase tracking-wider mb-1">Por apenas</div>
-                    <span className="text-4xl md:text-5xl font-light tracking-tight whitespace-nowrap">
-                      <span className="gradient-text">10x de R$&nbsp;57</span>
+                    <span className="font-light tracking-tight whitespace-nowrap">
+                      <span className="gradient-text"><span className="text-2xl md:text-3xl">10x de</span> <span className="text-4xl md:text-5xl">R$&nbsp;57</span></span>
                     </span>
                   </div>
                 </div>
