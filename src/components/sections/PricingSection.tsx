@@ -63,13 +63,13 @@ const PricingSection = () => {
                   <div className="inline-block bg-gold/10 border border-gold/30 rounded-lg px-6 py-4">
                     <div className="text-sm text-gold/80 uppercase tracking-wider mb-1">Por apenas</div>
                     <span className="text-4xl md:text-5xl font-light tracking-tight whitespace-nowrap">
-                      <span className="gradient-text">5x de R$&nbsp;110</span>
+                      <span className="gradient-text">10x de R$&nbsp;57</span>
                     </span>
                   </div>
                 </div>
                 
                 <p className="text-xs text-muted-foreground">
-                  Ou R$&nbsp;497 à vista no cartão ou PIX
+                  Ou R$&nbsp;475 à vista no cartão ou PIX
                 </p>
               </div>
 
