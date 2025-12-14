@@ -110,6 +110,9 @@ const HeroSection = () => {
         <img 
           src={carbonTexture}
           alt=""
+          fetchPriority="high"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover opacity-[0.015]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background"></div>
@@ -145,6 +148,8 @@ const HeroSection = () => {
             <img 
               src={logoTreinamento} 
               alt="COMUNICAÇÃO: O Discurso do Líder - Fernando Machado" 
+              width={500}
+              height={180}
               className="w-[180px] md:w-[400px] lg:w-[500px] h-auto mx-auto"
             />
           </motion.div>
