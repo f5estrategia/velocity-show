@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import logoTreinamento from "@/assets/logo-treinamento.svg";
 
@@ -9,8 +8,31 @@ const VTURB_SCRIPT_URL = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25
 const VSLPlayer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Intersection Observer - load player when it enters viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "100px" }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
+    if (!shouldLoad) return;
+
     // Check if script already exists
     const existingScript = document.querySelector(`script[src="${VTURB_SCRIPT_URL}"]`);
     if (existingScript) {
@@ -27,7 +49,7 @@ const VSLPlayer = () => {
     return () => {
       // Don't remove script on unmount to preserve player state
     };
-  }, []);
+  }, [shouldLoad]);
 
   useEffect(() => {
     if (scriptLoaded) {
@@ -38,23 +60,14 @@ const VSLPlayer = () => {
   }, [scriptLoaded]);
 
   return (
-    <div className="relative aspect-video rounded-sm overflow-hidden border border-white/5 shadow-elegant">
+    <div ref={containerRef} className="relative aspect-video rounded-sm overflow-hidden border border-white/5 shadow-elegant">
       {/* Loading skeleton */}
       {isLoading && (
         <div className="absolute inset-0 bg-navy-deep flex items-center justify-center z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-gold/5 animate-pulse" />
           <div className="relative">
-            <motion.div 
-              className="absolute inset-0 bg-gold/5 blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
+            <div 
+              className="absolute inset-0 bg-gold/5 blur-3xl animate-pulse-glow"
             />
             <div className="relative w-16 h-16 rounded-full border border-gold-whisper/40 flex items-center justify-center">
               <div className="w-3 h-3 bg-gold/60 rounded-full animate-pulse" />
@@ -66,11 +79,13 @@ const VSLPlayer = () => {
         </div>
       )}
       
-      {/* VTurb Player */}
-      <vturb-smartplayer 
-        id={VTURB_PLAYER_ID} 
-        style={{ display: 'block', margin: '0 auto', width: '100%' }}
-      />
+      {/* VTurb Player - only render when should load */}
+      {shouldLoad && (
+        <vturb-smartplayer 
+          id={VTURB_PLAYER_ID} 
+          style={{ display: 'block', margin: '0 auto', width: '100%' }}
+        />
+      )}
     </div>
   );
 };
@@ -130,29 +145,10 @@ const HeroSection = () => {
         <div className="noise-bg" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background"></div>
         
-        {/* Aurora gradient effect - CSS only on mobile for better performance */}
+        {/* Aurora gradient effect - CSS only for better performance */}
         <div 
-          className="absolute inset-0 opacity-30 md:hidden"
-          style={{
-            background: 'radial-gradient(circle at 50% 50%, hsl(var(--gold-primary) / 0.05), transparent 50%)'
-          }}
+          className="absolute inset-0 opacity-30 aurora-gradient"
           aria-hidden="true"
-        />
-        {/* Animated aurora only on desktop */}
-        <motion.div 
-          className="absolute inset-0 opacity-30 hidden md:block"
-          animate={{
-            background: [
-              'radial-gradient(circle at 20% 50%, hsl(var(--gold-primary) / 0.05), transparent 50%)',
-              'radial-gradient(circle at 80% 50%, hsl(var(--gold-accent) / 0.05), transparent 50%)',
-              'radial-gradient(circle at 20% 50%, hsl(var(--gold-primary) / 0.05), transparent 50%)',
-            ]
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear"
-          }}
         />
       </div>
 
@@ -160,12 +156,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 lg:px-12 pt-6 pb-12 md:py-32">
         <div className="max-w-7xl mx-auto">
           {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-4 md:mb-10 lg:mb-14"
-          >
+          <div className="mb-4 md:mb-10 lg:mb-14 hero-fade-in" style={{ animationDelay: '0s' }}>
             <img 
               src={logoTreinamento} 
               alt="COMUNICAÇÃO: O Discurso do Líder - Fernando Machado" 
@@ -174,17 +165,12 @@ const HeroSection = () => {
               height={180}
               className="w-[180px] md:w-[400px] lg:w-[500px] h-auto mx-auto"
             />
-          </motion.div>
+          </div>
 
           {/* Single Column Layout */}
           <div className="max-w-5xl mx-auto space-y-6 md:space-y-12">
             {/* Headline and Subheadline */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-              className="space-y-3 md:space-y-6 text-center"
-            >
+            <div className="space-y-3 md:space-y-6 text-center hero-fade-in" style={{ animationDelay: '0.15s' }}>
               <h1 className="text-2xl md:text-5xl lg:text-6xl font-display font-medium leading-[1.15] tracking-tight">
                 <span className="text-reveal" style={{ '--reveal-delay': '0s' } as React.CSSProperties}>
                   A comunicação é a <span className="relative inline-block">
@@ -200,24 +186,15 @@ const HeroSection = () => {
               <p className="text-xs md:text-lg text-muted-foreground leading-relaxed max-w-xs md:max-w-2xl mx-auto">
                 Assista ao vídeo e descubra como uma pessoa que falava "poblema" virou apresentador de TV — e como você pode dominar essa habilidade de forma prática.
               </p>
-            </motion.div>
+            </div>
 
             {/* VSL */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3 }}
-            >
+            <div className="hero-fade-in" style={{ animationDelay: '0.25s' }}>
               <VSLPlayer />
-            </motion.div>
+            </div>
 
             {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-center"
-            >
+            <div className="text-center hero-fade-in" style={{ animationDelay: '0.4s' }}>
               <Button 
                 size="lg" 
                 className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide micro-interaction mouse-glow group relative overflow-hidden"
@@ -228,7 +205,7 @@ const HeroSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
                 </a>
               </Button>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
