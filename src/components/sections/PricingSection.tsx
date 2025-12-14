@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, Clock } from "lucide-react";
-import carbonTexture from "@/assets/carbon-texture-2.jpg";
 import { useState, useEffect } from "react";
 
 const features = [
@@ -82,11 +81,7 @@ const PricingSection = () => {
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Carbon Texture Background */}
       <div className="absolute inset-0">
-        <img 
-          src={carbonTexture}
-          alt=""
-          className="w-full h-full object-cover opacity-[0.02]"
-        />
+        <div className="noise-bg noise-bg-stronger" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/50 to-background"></div>
       </div>
 

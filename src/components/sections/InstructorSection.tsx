@@ -12,6 +12,9 @@ const InstructorSection = () => {
             <img 
               src={fernandoImage}
               alt="Fernando Machado"
+              loading="lazy"
+              width={634}
+              height={868}
               className="relative rounded-lg shadow-2xl w-full grayscale border border-white/5"
             />
           </div>
