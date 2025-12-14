@@ -98,8 +98,11 @@ const HeroSection = () => {
     };
   }, []);
   
-  // Mouse tracking for glow effects - uses cached rect to avoid reflows
+  // Mouse tracking for glow effects - only on desktop, uses cached rect
   useEffect(() => {
+    // Skip on mobile/touch devices for better performance
+    if (window.matchMedia('(max-width: 768px)').matches) return;
+    
     const handleMouseMove = (e: MouseEvent) => {
       if (rectRef.current) {
         setMousePosition({
@@ -127,9 +130,17 @@ const HeroSection = () => {
         <div className="noise-bg" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background"></div>
         
-        {/* Aurora gradient effect */}
+        {/* Aurora gradient effect - CSS only on mobile for better performance */}
+        <div 
+          className="absolute inset-0 opacity-30 md:hidden"
+          style={{
+            background: 'radial-gradient(circle at 50% 50%, hsl(var(--gold-primary) / 0.05), transparent 50%)'
+          }}
+          aria-hidden="true"
+        />
+        {/* Animated aurora only on desktop */}
         <motion.div 
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-30 hidden md:block"
           animate={{
             background: [
               'radial-gradient(circle at 20% 50%, hsl(var(--gold-primary) / 0.05), transparent 50%)',
@@ -138,7 +149,7 @@ const HeroSection = () => {
             ]
           }}
           transition={{
-            duration: 10,
+            duration: 15,
             repeat: Infinity,
             ease: "linear"
           }}
