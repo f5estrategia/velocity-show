@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import carbonTexture from "@/assets/carbon-texture-1.jpg";
 import logoTreinamento from "@/assets/logo-treinamento.svg";
 
 const VTURB_PLAYER_ID = "vid-693170b030e3e1f3170aac15";
@@ -125,14 +124,7 @@ const HeroSection = () => {
     >
       {/* Carbon Texture Background with Aurora */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={carbonTexture}
-          alt=""
-          fetchPriority="high"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover opacity-[0.015]"
-        />
+        <div className="noise-bg" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background"></div>
         
         {/* Aurora gradient effect */}

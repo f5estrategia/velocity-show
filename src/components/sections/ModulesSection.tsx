@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import carbonTexture from "@/assets/carbon-texture-2.jpg";
 import modulo1 from "@/assets/modulo1-fundacao.jpg";
 import modulo2 from "@/assets/modulo2-preparacao.jpg";
 import modulo3 from "@/assets/modulo3-apresentacao.jpg";
@@ -89,11 +88,7 @@ const ModulesSection = () => {
     <section className="relative py-20 md:py-28 overflow-hidden">
       {/* Carbon Texture Background */}
       <div className="absolute inset-0">
-        <img 
-          src={carbonTexture}
-          alt=""
-          className="w-full h-full object-cover opacity-[0.02]"
-        />
+        <div className="noise-bg noise-bg-stronger" aria-hidden="true" />
         <div className="absolute inset-0 bg-secondary/30"></div>
       </div>
 

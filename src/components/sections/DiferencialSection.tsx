@@ -1,7 +1,6 @@
 import { Target, Users, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import carbonTexture from "@/assets/carbon-texture-2.jpg";
 
 const diferenciais = [
   {
@@ -26,11 +25,7 @@ const DiferencialSection = () => {
     <section className="py-20 md:py-28 bg-secondary/30 relative overflow-hidden">
       {/* Carbon Texture Background */}
       <div className="absolute inset-0">
-        <img 
-          src={carbonTexture}
-          alt=""
-          className="w-full h-full object-cover opacity-[0.015]"
-        />
+        <div className="noise-bg" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/30 via-background to-secondary/30"></div>
       </div>
 

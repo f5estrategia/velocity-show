@@ -1,7 +1,6 @@
 import { Shield, TrendingUp, Users, Network, Zap, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import carbonTexture from "@/assets/carbon-texture-1.jpg";
 
 const transformations = [
   {
@@ -41,11 +40,7 @@ const TransformationSection = () => {
     <section className="relative py-20 md:py-28 overflow-hidden">
       {/* Carbon Texture Background */}
       <div className="absolute inset-0">
-        <img 
-          src={carbonTexture}
-          alt=""
-          className="w-full h-full object-cover opacity-[0.02]"
-        />
+        <div className="noise-bg noise-bg-stronger" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/30"></div>
       </div>
 
