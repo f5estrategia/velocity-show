@@ -1,37 +1,42 @@
+import { lazy, Suspense } from "react";
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
-import CausaRaizSection from "@/components/sections/CausaRaizSection";
-import DiferencialSection from "@/components/sections/DiferencialSection";
-import TrendSection from "@/components/sections/TrendSection";
-import TransformationSection from "@/components/sections/TransformationSection";
-import InstructorSection from "@/components/sections/InstructorSection";
-import JourneySection from "@/components/sections/JourneySection";
-import ModulesSection from "@/components/sections/ModulesSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import PricingSection from "@/components/sections/PricingSection";
-import GuaranteeSection from "@/components/sections/GuaranteeSection";
-import FAQSection from "@/components/sections/FAQSection";
-import FinalCTASection from "@/components/sections/FinalCTASection";
-import Footer from "@/components/sections/Footer";
+
+// Lazy load sections below the fold to reduce initial bundle size
+const CausaRaizSection = lazy(() => import("@/components/sections/CausaRaizSection"));
+const DiferencialSection = lazy(() => import("@/components/sections/DiferencialSection"));
+const TrendSection = lazy(() => import("@/components/sections/TrendSection"));
+const TransformationSection = lazy(() => import("@/components/sections/TransformationSection"));
+const InstructorSection = lazy(() => import("@/components/sections/InstructorSection"));
+const JourneySection = lazy(() => import("@/components/sections/JourneySection"));
+const ModulesSection = lazy(() => import("@/components/sections/ModulesSection"));
+const TestimonialsSection = lazy(() => import("@/components/sections/TestimonialsSection"));
+const PricingSection = lazy(() => import("@/components/sections/PricingSection"));
+const GuaranteeSection = lazy(() => import("@/components/sections/GuaranteeSection"));
+const FAQSection = lazy(() => import("@/components/sections/FAQSection"));
+const FinalCTASection = lazy(() => import("@/components/sections/FinalCTASection"));
+const Footer = lazy(() => import("@/components/sections/Footer"));
 
 const Index = () => {
   return (
     <main className="bg-background overflow-x-hidden">
       <HeroSection />
       <ProblemSection />
-      <CausaRaizSection />
-      <DiferencialSection />
-      <TrendSection />
-      <TransformationSection />
-      <InstructorSection />
-      <JourneySection />
-      <ModulesSection />
-      <TestimonialsSection />
-      <PricingSection />
-      <GuaranteeSection />
-      <FAQSection />
-      <FinalCTASection />
-      <Footer />
+      <Suspense fallback={null}>
+        <CausaRaizSection />
+        <DiferencialSection />
+        <TrendSection />
+        <TransformationSection />
+        <InstructorSection />
+        <JourneySection />
+        <ModulesSection />
+        <TestimonialsSection />
+        <PricingSection />
+        <GuaranteeSection />
+        <FAQSection />
+        <FinalCTASection />
+        <Footer />
+      </Suspense>
     </main>
   );
 };
