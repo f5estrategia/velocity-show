@@ -7,7 +7,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Play } from "lucide-react";
 
 interface Testimonial {
   id: string;
@@ -38,53 +37,58 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-// Lazy Video Player Component - only loads when activated
-const LazyVideoPlayer = ({ testimonial }: { testimonial: Testimonial }) => {
-  const [isActivated, setIsActivated] = useState(false);
+// Video Player with Intersection Observer for autoplay
+const VideoPlayer = ({ testimonial }: { testimonial: Testimonial }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!isActivated) return;
-
-    // Load the player script only when activated
-    const script = document.createElement("script");
-    script.src = testimonial.playerScript;
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector(`script[src="${testimonial.playerScript}"]`);
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
-  }, [isActivated, testimonial.playerScript]);
-
-  if (!isActivated) {
-    return (
-      <button
-        onClick={() => setIsActivated(true)}
-        className="relative w-full aspect-[4/5] bg-card/50 border border-gold/10 rounded-sm overflow-hidden group cursor-pointer"
-        aria-label="Reproduzir depoimento"
-      >
-        {/* Placeholder with play button */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-background/80 to-background/95">
-          <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center group-hover:bg-gold/30 transition-colors mb-4">
-            <Play className="w-8 h-8 text-gold ml-1" />
-          </div>
-          <span className="text-sm text-muted-foreground">Toque para assistir</span>
-        </div>
-      </button>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isLoaded) {
+            setIsLoaded(true);
+          }
+        });
+      },
+      { rootMargin: "200px", threshold: 0.1 }
     );
-  }
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isLoaded]);
+
+  useEffect(() => {
+    if (!isLoaded) return;
+
+    // Check if script already exists
+    const existingScript = document.querySelector(`script[src="${testimonial.playerScript}"]`);
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = testimonial.playerScript;
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }, [isLoaded, testimonial.playerScript]);
 
   return (
-    <div ref={containerRef} className="w-full aspect-[4/5]">
-      <vturb-smartplayer
-        id={testimonial.id}
-        style={{ display: "block", margin: "0 auto", width: "100%", maxWidth: "400px" }}
-      />
+    <div 
+      ref={containerRef} 
+      className="w-full aspect-[4/5] bg-card/30 rounded-sm overflow-hidden border border-gold/10"
+    >
+      {isLoaded ? (
+        <vturb-smartplayer
+          id={testimonial.id}
+          style={{ display: "block", margin: "0 auto", width: "100%", height: "100%" }}
+        />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
+        </div>
+      )}
     </div>
   );
 };
@@ -113,13 +117,13 @@ const VideoTestimonialsSection = () => {
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {testimonials.map((testimonial, index) => (
+              {testimonials.map((testimonial) => (
                 <CarouselItem
                   key={testimonial.id}
                   className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3"
                 >
                   <div className="p-1">
-                    <LazyVideoPlayer testimonial={testimonial} />
+                    <VideoPlayer testimonial={testimonial} />
                   </div>
                 </CarouselItem>
               ))}
