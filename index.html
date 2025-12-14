@@ -16,10 +16,11 @@
     <meta name="twitter:site" content="@FernandoMachado" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
-    <!-- Fonts -->
+    <!-- Fonts - with preconnect and non-render-blocking load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
     <!-- VTurb Player Optimization -->
     <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
