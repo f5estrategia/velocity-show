@@ -158,6 +158,7 @@ const HeroSection = () => {
             <img 
               src={logoTreinamento} 
               alt="COMUNICAÇÃO: O Discurso do Líder - Fernando Machado" 
+              fetchPriority="high"
               width={500}
               height={180}
               className="w-[180px] md:w-[400px] lg:w-[500px] h-auto mx-auto"
