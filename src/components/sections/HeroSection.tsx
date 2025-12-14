@@ -79,20 +79,38 @@ const VSLPlayer = () => {
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLElement>(null);
+  const rectRef = useRef<DOMRect | null>(null);
   
-  // Mouse tracking for glow effects
+  // Cache bounding rect to avoid forced reflows on every mouse move
+  useEffect(() => {
+    const updateRect = () => {
+      if (sectionRef.current) {
+        rectRef.current = sectionRef.current.getBoundingClientRect();
+      }
+    };
+    
+    updateRect();
+    window.addEventListener('resize', updateRect);
+    window.addEventListener('scroll', updateRect);
+    
+    return () => {
+      window.removeEventListener('resize', updateRect);
+      window.removeEventListener('scroll', updateRect);
+    };
+  }, []);
+  
+  // Mouse tracking for glow effects - uses cached rect to avoid reflows
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
+      if (rectRef.current) {
         setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top,
+          x: e.clientX - rectRef.current.left,
+          y: e.clientY - rectRef.current.top,
         });
       }
     };
     
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
