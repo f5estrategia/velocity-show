@@ -26,10 +26,10 @@ const Index = () => {
       <Suspense fallback={null}>
         <CausaRaizSection />
         <DiferencialSection />
+        <VideoTestimonialsSection />
         <TrendSection />
         <TransformationSection />
         <InstructorSection />
-        <VideoTestimonialsSection />
         <JourneySection />
         <ModulesSection />
         <TestimonialsSection />
