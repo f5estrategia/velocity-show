@@ -112,6 +112,62 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Hero CSS animations - replaces Framer Motion for better mobile performance */
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-fade-in {
+    animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--animation-delay, 0s);
+    opacity: 0;
+  }
+  
+  /* Aurora gradient animation - CSS only for GPU acceleration */
+  @keyframes aurora-shift {
+    0%, 100% {
+      background: radial-gradient(circle at 20% 50%, hsl(var(--gold-primary) / 0.05), transparent 50%);
+    }
+    50% {
+      background: radial-gradient(circle at 80% 50%, hsl(var(--gold-accent) / 0.05), transparent 50%);
+    }
+  }
+  
+  .aurora-gradient {
+    animation: aurora-shift 15s ease-in-out infinite;
+    will-change: background;
+  }
+  
+  @media (max-width: 768px) {
+    .aurora-gradient {
+      animation: none;
+      background: radial-gradient(circle at 50% 50%, hsl(var(--gold-primary) / 0.05), transparent 50%);
+    }
+  }
+  
+  /* Pulse glow for loading states - replaces Framer Motion in VSLPlayer */
+  @keyframes pulse-glow {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
   /* Premium Typography */
   .gradient-text {
     background: var(--gradient-text-shine);

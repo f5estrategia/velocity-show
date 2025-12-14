@@ -127,6 +127,10 @@ const ModulesSection = () => {
                       <img 
                         src={module.thumbnail} 
                         alt={module.title}
+                        width={320}
+                        height={180}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
                       />
                     </div>

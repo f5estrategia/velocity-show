@@ -32,10 +32,9 @@
     <link rel="preconnect" href="https://images.converteai.net" crossorigin>
     <link rel="preconnect" href="https://api.vturb.com.br" crossorigin>
     
-    <!-- Preload critical VTurb resources -->
-    <link rel="preload" href="https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693170b030e3e1f3170aac15/v4/player.js" as="script">
-    <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-    <link rel="preload" href="https://cdn.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/6931709d8f0253bca6646988/main.m3u8" as="fetch" crossorigin>
+    <!-- Defer non-critical VTurb resources - will be loaded when player initializes -->
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
     <meta property="og:title" content="COMUNICAÇÃO: O Discurso do Líder | Fernando Machado">
   <meta name="twitter:title" content="COMUNICAÇÃO: O Discurso do Líder | Fernando Machado">
   <meta property="og:description" content="Transforme sua comunicação na maior arma para vender, liderar e dominar. Programa executivo de oratória com Fernando Machado.">
