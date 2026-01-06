@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -38,6 +37,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+// Video Player with Intersection Observer for autoplay
 const VideoPlayer = ({ testimonial }: { testimonial: Testimonial }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -64,6 +64,7 @@ const VideoPlayer = ({ testimonial }: { testimonial: Testimonial }) => {
   useEffect(() => {
     if (!isLoaded) return;
 
+    // Check if script already exists
     const existingScript = document.querySelector(`script[src="${testimonial.playerScript}"]`);
     if (!existingScript) {
       const script = document.createElement("script");
@@ -76,7 +77,7 @@ const VideoPlayer = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
     <div 
       ref={containerRef} 
-      className="w-full aspect-[4/5] bg-graphite/50 rounded-xl overflow-hidden border border-white/10"
+      className="w-full aspect-[4/5] bg-card/30 rounded-sm overflow-hidden border border-gold/10"
     >
       {isLoaded ? (
         <vturb-smartplayer
@@ -94,19 +95,11 @@ const VideoPlayer = ({ testimonial }: { testimonial: Testimonial }) => {
 
 const VideoTestimonialsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-graphite/50 relative overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0">
-        <div className="noise-bg opacity-[0.02]" aria-hidden="true" />
-      </div>
-      
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-10 md:mb-14">
-          <span className="inline-block text-[10px] md:text-xs tracking-[0.25em] uppercase text-gold font-medium mb-4">
-            Depoimentos
-          </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-4">
             O que nossos <span className="gradient-text">alunos</span> estão dizendo
           </h2>
           <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
@@ -135,8 +128,8 @@ const VideoTestimonialsSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-0 border-gold/20 hover:border-gold/40 hover:bg-gold/10" />
-            <CarouselNext className="right-0 border-gold/20 hover:border-gold/40 hover:bg-gold/10" />
+            <CarouselPrevious className="left-0 border-gold/20 hover:border-gold/40 hover:bg-gold/5" />
+            <CarouselNext className="right-0 border-gold/20 hover:border-gold/40 hover:bg-gold/5" />
           </Carousel>
         </div>
 
@@ -144,7 +137,7 @@ const VideoTestimonialsSection = () => {
         <div className="text-center mt-10 md:mt-14">
           <Button
             size="lg"
-            className="bg-gold hover:bg-gold-accent text-background font-semibold text-sm px-8 py-6 rounded-lg transition-all duration-300 hover:scale-[1.02] group"
+            className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide bg-gold hover:bg-gold/90 text-background"
             asChild
           >
             <a
@@ -153,7 +146,6 @@ const VideoTestimonialsSection = () => {
               rel="noopener noreferrer"
             >
               Quero Fazer Parte
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
         </div>
