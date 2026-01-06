@@ -3,25 +3,37 @@ import fernandoImage from "@/assets/fernando-palco.png";
 
 const InstructorSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+      {/* Subtle glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[150px]" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Image */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent rounded-lg blur-2xl"></div>
+          <div className="relative">
+            <div className="absolute -inset-4 border border-gold/20 rounded-xl pointer-events-none" />
+            <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-gold rounded-tl-sm" />
+            <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-gold rounded-tr-sm" />
+            <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-gold rounded-bl-sm" />
+            <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-gold rounded-br-sm" />
+            
             <img 
               src={fernandoImage}
               alt="Fernando Machado"
               loading="lazy"
               width={634}
               height={868}
-              className="relative rounded-lg shadow-2xl w-full grayscale border border-white/5"
+              className="relative rounded-lg w-full grayscale hover:grayscale-0 transition-all duration-500"
             />
           </div>
 
           {/* Content */}
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 tracking-tight">
+            <span className="inline-block text-[10px] md:text-xs tracking-[0.25em] uppercase text-gold font-medium mb-4">
+              Seu Mentor
+            </span>
+            
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 tracking-tight">
               Fernando Machado
             </h2>
             <p className="text-gold text-base md:text-lg font-medium mb-8">
@@ -29,7 +41,7 @@ const InstructorSection = () => {
             </p>
 
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed mb-8">
-              <p className="text-foreground font-medium">
+              <p className="text-foreground font-medium text-base">
                 Uma pessoa que falava "poblema" virou apresentador de televisão nacional.
               </p>
 
@@ -47,8 +59,8 @@ const InstructorSection = () => {
               </p>
 
               <p>
-                Mais de <span className="text-gold font-medium">R$ 30 milhões</span> em vendas geradas.
-                Mais de <span className="text-gold font-medium">1.000 marcas</span> impactadas.
+                Mais de <span className="text-gold font-semibold">R$ 30 milhões</span> em vendas geradas.
+                Mais de <span className="text-gold font-semibold">1.000 marcas</span> impactadas.
               </p>
 
               <p className="text-foreground font-medium">
@@ -59,16 +71,16 @@ const InstructorSection = () => {
 
             {/* Badges */}
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline" className="border-gold/30 text-gold/80 px-3 py-1 text-xs font-normal">
+              <Badge variant="outline" className="border-gold/30 bg-gold/5 text-gold px-4 py-1.5 text-xs font-medium rounded-full">
                 13 Anos de TV
               </Badge>
-              <Badge variant="outline" className="border-gold/30 text-gold/80 px-3 py-1 text-xs font-normal">
+              <Badge variant="outline" className="border-gold/30 bg-gold/5 text-gold px-4 py-1.5 text-xs font-medium rounded-full">
                 CEO Grupo Empresarial
               </Badge>
-              <Badge variant="outline" className="border-gold/30 text-gold/80 px-3 py-1 text-xs font-normal">
+              <Badge variant="outline" className="border-gold/30 bg-gold/5 text-gold px-4 py-1.5 text-xs font-medium rounded-full">
                 R$ 30M Gerados
               </Badge>
-              <Badge variant="outline" className="border-gold/30 text-gold/80 px-3 py-1 text-xs font-normal">
+              <Badge variant="outline" className="border-gold/30 bg-gold/5 text-gold px-4 py-1.5 text-xs font-medium rounded-full">
                 1000+ Marcas
               </Badge>
             </div>
