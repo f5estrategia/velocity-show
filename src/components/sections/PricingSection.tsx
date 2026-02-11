@@ -123,14 +123,13 @@ const PricingSection = () => {
                   <div className="inline-block bg-gold/10 border border-gold/30 rounded-lg px-6 py-4">
                     <div className="text-sm text-gold/80 uppercase tracking-wider mb-1">Por apenas</div>
                     <span className="font-light tracking-tight whitespace-nowrap flex items-baseline justify-center gap-2">
-                      <span className="text-xl md:text-2xl gradient-text">5x de</span>
-                      <span className="text-4xl md:text-5xl gradient-text">R$&nbsp;48</span>
+                      <span className="text-4xl md:text-5xl gradient-text">R$&nbsp;97</span>
                     </span>
                   </div>
                 </div>
                 
                 <p className="text-xs text-muted-foreground">
-                  Ou R$&nbsp;240 à vista no cartão ou PIX
+                  Pagamento único no cartão ou PIX
                 </p>
               </div>
 
@@ -156,7 +155,7 @@ const PricingSection = () => {
                 size="lg"
                 asChild
               >
-                <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+                <a href="https://pay.hotmart.com/M103064438P?checkoutMode=10" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10">Começar Agora</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
                 </a>
