@@ -141,7 +141,7 @@ const VideoTestimonialsSection = () => {
             asChild
           >
             <a
-              href="https://pay.hotmart.com/M103064438P?bid=1764138358390"
+              href="https://pay.hotmart.com/M103064438P?checkoutMode=10"
               target="_blank"
               rel="noopener noreferrer"
             >

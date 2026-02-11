@@ -27,7 +27,7 @@ const FinalCTASection = () => {
             className="text-sm px-6 md:px-10 py-6 rounded-md font-medium shadow-2xl hover:shadow-3xl transition-all duration-300 mouse-glow relative overflow-hidden group w-full sm:w-auto"
             asChild
           >
-            <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+            <a href="https://pay.hotmart.com/M103064438P?checkoutMode=10" target="_blank" rel="noopener noreferrer">
               <span className="relative z-10">Garantir Minha Vaga Agora</span>
               <div className="absolute inset-0 bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 shimmer"></div>
             </a>

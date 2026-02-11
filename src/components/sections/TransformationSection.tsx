@@ -84,7 +84,7 @@ const TransformationSection = () => {
             className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide"
             asChild
           >
-            <a href="https://pay.hotmart.com/M103064438P?bid=1764138358390" target="_blank" rel="noopener noreferrer">
+            <a href="https://pay.hotmart.com/M103064438P?checkoutMode=10" target="_blank" rel="noopener noreferrer">
               Quero Transformar Minha Comunicação
             </a>
           </Button>
