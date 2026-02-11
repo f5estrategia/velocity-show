@@ -7,7 +7,7 @@ const InstructorSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Image */}
-          <div className="relative group">
+          <div className="relative group flex justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent rounded-lg blur-2xl"></div>
             <img 
               src={fernandoImage}
@@ -15,7 +15,7 @@ const InstructorSection = () => {
               loading="lazy"
               width={634}
               height={868}
-              className="relative rounded-lg shadow-2xl w-full grayscale border border-white/5"
+              className="relative rounded-lg shadow-2xl w-full max-h-[500px] object-cover object-top grayscale border border-white/5"
             />
           </div>
 
