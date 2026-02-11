@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import fernandoImage from "@/assets/fernando-palco.png";
+import fernandoImage from "@/assets/fernando-instructor.webp";
 
 const InstructorSection = () => {
   return (
