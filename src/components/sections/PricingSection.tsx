@@ -114,7 +114,7 @@ const PricingSection = () => {
                 {/* Valor Original */}
                 <div className="mb-3">
                   <span className="text-lg text-muted-foreground line-through">
-                    De R$ 997
+                    De R$ 297
                   </span>
                 </div>
                 
