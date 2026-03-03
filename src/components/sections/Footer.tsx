@@ -1,5 +1,5 @@
 import { Instagram, Youtube, Linkedin } from "lucide-react";
-import logoTreinamento from "@/assets/logo-treinamento.svg";
+import logoTreinamento from "@/assets/logo-treinamento.png";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <img 
               src={logoTreinamento} 
-              alt="COMUNICAÇÃO: O Discurso do Líder" 
+              alt="COMUNICAÇÃO: Oratória que Vende" 
               className="w-[180px] h-auto mb-3 opacity-80"
             />
             <p className="text-xs text-muted-foreground">
