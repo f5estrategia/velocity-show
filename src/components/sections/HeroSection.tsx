@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
-import logoTreinamento from "@/assets/logo-treinamento.svg";
+import logoTreinamento from "@/assets/logo-treinamento.png";
 
 const VTURB_PLAYER_ID = "vid-693170b030e3e1f3170aac15";
 const VTURB_SCRIPT_URL = "https://scripts.converteai.net/de1f52b9-182e-4159-9b25-8c5e55b7fd12/players/693170b030e3e1f3170aac15/v4/player.js";
@@ -159,7 +159,7 @@ const HeroSection = () => {
           <div className="mb-4 md:mb-10 lg:mb-14 hero-fade-in" style={{ animationDelay: '0s' }}>
             <img 
               src={logoTreinamento} 
-              alt="COMUNICAÇÃO: O Discurso do Líder - Fernando Machado" 
+              alt="COMUNICAÇÃO: Oratória que Vende - Fernando Machado" 
               fetchPriority="high"
               width={500}
               height={180}
