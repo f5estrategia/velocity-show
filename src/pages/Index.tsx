@@ -23,11 +23,13 @@ const Index = () => {
   return (
     <main className="bg-background overflow-x-hidden">
       <HeroSection />
+      <Suspense fallback={null}>
+        <VideoTestimonialsSection />
+      </Suspense>
       <ProblemSection />
       <Suspense fallback={null}>
         <CausaRaizSection />
         <DiferencialSection />
-        <VideoTestimonialsSection />
         <TrendSection />
         <TransformationSection />
         <InstructorSection />

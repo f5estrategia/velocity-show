@@ -95,20 +95,20 @@ const VideoPlayer = ({ testimonial }: { testimonial: Testimonial }) => {
 
 const VideoTestimonialsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
-        <div className="text-center mb-10 md:mb-14">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-4">
+        <div className="text-center mb-8 md:mb-14">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-2 md:mb-4">
             O que nossos <span className="gradient-text">alunos</span> estão dizendo
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-xs md:text-base max-w-2xl mx-auto px-2">
             Histórias reais de transformação de quem já domina a arte de apresentar
           </p>
         </div>
 
         {/* Carousel */}
-        <div className="relative max-w-5xl mx-auto px-8 md:px-12">
+        <div className="relative max-w-5xl mx-auto px-6 md:px-12">
           <Carousel
             opts={{
               align: "start",
@@ -120,24 +120,24 @@ const VideoTestimonialsSection = () => {
               {testimonials.map((testimonial) => (
                 <CarouselItem
                   key={testimonial.id}
-                  className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3"
+                  className="pl-2 md:pl-4 basis-[75%] sm:basis-1/2 lg:basis-1/3"
                 >
-                  <div className="p-1">
+                  <div className="p-0.5 md:p-1">
                     <VideoPlayer testimonial={testimonial} />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-0 border-gold/20 hover:border-gold/40 hover:bg-gold/5" />
-            <CarouselNext className="right-0 border-gold/20 hover:border-gold/40 hover:bg-gold/5" />
+            <CarouselPrevious className="-left-3 md:left-0 w-8 h-8 md:w-10 md:h-10 border-gold/20 hover:border-gold/40 hover:bg-gold/5" />
+            <CarouselNext className="-right-3 md:right-0 w-8 h-8 md:w-10 md:h-10 border-gold/20 hover:border-gold/40 hover:bg-gold/5" />
           </Carousel>
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-10 md:mt-14">
+        <div className="text-center mt-8 md:mt-14">
           <Button
             size="lg"
-            className="text-sm px-8 py-6 rounded-sm font-normal tracking-wide bg-gold hover:bg-gold/90 text-background"
+            className="text-xs md:text-sm px-6 md:px-8 py-5 md:py-6 rounded-sm font-normal tracking-wide bg-gold hover:bg-gold/90 text-background w-full sm:w-auto"
             asChild
           >
             <a
